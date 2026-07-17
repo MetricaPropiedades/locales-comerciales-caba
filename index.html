@@ -5,718 +5,722 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Locales Comerciales - Búsqueda diaria</title>
 <style>
-:root{ color-scheme: light; }
-* { box-sizing: border-box; }
-body {
-font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-background: #f4f5f7;
-margin: 0;
-padding: 24px;
-color: #222;
-}
-.header {
-max-width: 1000px;
-margin: 0 auto 16px auto;
-}
-.header h1 {
-font-size: 22px;
-margin: 0 0 6px 0;
-}
-.header p {
-color: #666;
-font-size: 13px;
-margin: 0;
-}
-.tab-bar {
-max-width: 1000px;
-margin: 0 auto 0 auto;
-display: flex;
-gap: 6px;
-}
-.tab-btn {
-background: #e9e9ec;
-border: 1px solid #d5d5d5;
-border-bottom: none;
-border-radius: 10px 10px 0 0;
-padding: 10px 22px;
-font-size: 14px;
-font-weight: 700;
-color: #666;
-cursor: pointer;
-}
-.tab-btn.active {
-background: #222;
-color: #fff;
-border-color: #222;
-}
-.tab-panel { display: none; }
-.tab-panel.active { display: block; }
-.filters {
-max-width: 1000px;
-margin: 0 auto 24px auto;
-background: #fff;
-border: 1px solid #e2e2e2;
-border-radius: 0 10px 10px 10px;
-padding: 14px 18px;
-font-size: 13px;
-color: #444;
-}
-.filters strong { color: #111; font-weight: 700; }
-.day-section {
-max-width: 1000px;
-margin: 0 auto 32px auto;
-}
-.day-title {
-font-size: 17px;
-font-weight: 700;
-padding: 8px 0;
-border-bottom: 2px solid #222;
-margin-bottom: 16px;
-}
-.op-block {
-margin-bottom: 26px;
-}
-.op-title {
-display: inline-block;
-color: #fff;
-font-weight: 700;
-font-size: 14px;
-padding: 6px 16px;
-border-radius: 6px;
-margin-bottom: 14px;
-letter-spacing: 0.4px;
-}
-.op-title.alquiler { background: #0a7d34; }
-.op-title.venta { background: #0a5fd6; }
-.site-block {
-margin-bottom: 22px;
-}
-.site-title {
-display: inline-block;
-color: #fff;
-font-weight: 700;
-font-size: 13px;
-padding: 5px 14px;
-border-radius: 6px;
-margin-bottom: 12px;
-letter-spacing: 0.3px;
-}
-.site-title.zonaprop { background: #FF6600; }
-.site-title.argenprop { background: #00A99D; }
-.site-title.inmoclick { background: #6C3BAA; }
-.cards {
-display: flex;
-flex-direction: column;
-gap: 14px;
-}
-.card {
-display: flex;
-background: #fff;
-border: 1px solid #e2e2e2;
-border-radius: 10px;
-overflow: hidden;
-}
-.card img {
-width: 220px;
-min-width: 220px;
-height: 165px;
-object-fit: cover;
-background: #eee;
-}
-.card-body {
-padding: 14px 18px;
-display: flex;
-flex-direction: column;
-gap: 4px;
-flex: 1;
-}
-.card-tags {
-font-size: 12px;
-color: #666;
-}
-.card-tags .op-alquiler { color: #0a7d34; font-weight: 700; }
-.card-tags .op-venta { color: #0a5fd6; font-weight: 700; }
-.card-price {
-font-size: 19px;
-font-weight: 700;
-color: #111;
-}
-.card-address {
-font-weight: 600;
-font-size: 14px;
-}
-.card-zone {
-font-size: 13px;
-color: #666;
-}
-.card-specs {
-font-size: 13px;
-color: #444;
-margin-top: 2px;
-}
-.card-flags {
-font-size: 12px;
-color: #b06a00;
-font-style: italic;
-}
-.card-btn {
-margin-top: 8px;
-align-self: flex-start;
-background: #FF6600;
-color: #fff;
-text-decoration: none;
-font-weight: 700;
-font-size: 13px;
-padding: 8px 20px;
-border-radius: 20px;
-}
-.card-btn.argenprop { background: #00A99D; }
-.card-btn.inmoclick { background: #6C3BAA; }
-.empty-note {
-color: #888;
-font-size: 13px;
-font-style: italic;
-}
+  :root{ color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f4f5f7;
+    margin: 0;
+    padding: 24px;
+    color: #222;
+  }
+  .header {
+    max-width: 1000px;
+    margin: 0 auto 16px auto;
+  }
+  .header h1 {
+    font-size: 22px;
+    margin: 0 0 6px 0;
+  }
+  .header p {
+    color: #666;
+    font-size: 13px;
+    margin: 0;
+  }
+  .tab-bar {
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    gap: 6px;
+  }
+  .tab-btn {
+    background: #e9e9ec;
+    border: 1px solid #d5d5d5;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    cursor: pointer;
+  }
+  .tab-btn.active {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .filters {
+    max-width: 1000px;
+    margin: 0 auto 24px auto;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 0 10px 10px 10px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: #444;
+  }
+  .filters strong { color: #111; font-weight: 700; }
+  .day-section {
+    max-width: 1000px;
+    margin: 0 auto 32px auto;
+  }
+  .day-title {
+    font-size: 17px;
+    font-weight: 700;
+    padding: 8px 0;
+    border-bottom: 2px solid #222;
+    margin-bottom: 16px;
+  }
+  .op-block {
+    margin-bottom: 26px;
+  }
+  .op-title {
+    display: inline-block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    letter-spacing: 0.4px;
+  }
+  .op-title.alquiler { background: #0a7d34; }
+  .op-title.venta { background: #0a5fd6; }
+  .site-block {
+    margin-bottom: 22px;
+  }
+  .site-title {
+    display: inline-block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+  }
+  .site-title.zonaprop { background: #FF6600; }
+  .site-title.argenprop { background: #00A99D; }
+  .site-title.inmoclick { background: #6C3BAA; }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .card {
+    display: flex;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card img {
+    width: 220px;
+    min-width: 220px;
+    height: 165px;
+    object-fit: cover;
+    background: #eee;
+  }
+  .card-body {
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+  .card-tags {
+    font-size: 12px;
+    color: #666;
+  }
+  .card-tags .op-alquiler { color: #0a7d34; font-weight: 700; }
+  .card-tags .op-venta { color: #0a5fd6; font-weight: 700; }
+  .card-price {
+    font-size: 19px;
+    font-weight: 700;
+    color: #111;
+  }
+  .card-address {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .card-zone {
+    font-size: 13px;
+    color: #666;
+  }
+  .card-specs {
+    font-size: 13px;
+    color: #444;
+    margin-top: 2px;
+  }
+  .card-flags {
+    font-size: 12px;
+    color: #b06a00;
+    font-style: italic;
+  }
+  .card-btn {
+    margin-top: 8px;
+    align-self: flex-start;
+    background: #FF6600;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 20px;
+    border-radius: 20px;
+  }
+  .card-btn.argenprop { background: #00A99D; }
+  .card-btn.inmoclick { background: #6C3BAA; }
+  .empty-note {
+    color: #888;
+    font-size: 13px;
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
 
 <div class="header">
-<h1>Locales Comerciales — Búsqueda diaria</h1>
-<p>Se actualiza todos los días a las 9am. Se muestran los últimos 15 días de búsqueda de cada pestaña. Cada pestaña es un filtro independiente: los resultados no se mezclan entre pestañas.</p>
+  <h1>Locales Comerciales — Búsqueda diaria</h1>
+  <p>Se actualiza todos los días a las 9am. Se muestran los últimos 15 días de búsqueda de cada pestaña. Cada pestaña es un filtro independiente: los resultados no se mezclan entre pestañas.</p>
 </div>
 
 <div class="tab-bar">
-<button class="tab-btn active" id="btn-caba-amba" onclick="showTab('caba-amba')">AMBA</button>
-<button class="tab-btn" id="btn-interior" onclick="showTab('interior')">Interior del País</button>
-<button class="tab-btn" id="btn-bumpie" onclick="showTab('bumpie')">Bumpie</button>
-<button class="tab-btn" id="btn-wayfarer" onclick="showTab('wayfarer')">Wayfarer</button>
-<button class="tab-btn" id="btn-northville" onclick="showTab('northville')">Northville</button>
-<button class="tab-btn" id="btn-freddo" onclick="showTab('freddo')">Freddo</button>
+  <button class="tab-btn active" id="btn-caba-amba" onclick="showTab('caba-amba')">AMBA</button>
+  <button class="tab-btn" id="btn-interior" onclick="showTab('interior')">Interior del País</button>
+  <button class="tab-btn" id="btn-bumpie" onclick="showTab('bumpie')">Bumpie</button>
+  <button class="tab-btn" id="btn-wayfarer" onclick="showTab('wayfarer')">Wayfarer</button>
+  <button class="tab-btn" id="btn-northville" onclick="showTab('northville')">Northville</button>
+  <button class="tab-btn" id="btn-freddo" onclick="showTab('freddo')">Freddo</button>
+  <button class="tab-btn" id="btn-chapaypintura" onclick="showTab('chapaypintura')">Taller Chapa y Pintura</button>
+  <button class="tab-btn" id="btn-bostani" onclick="showTab('bostani')">Bostani Coffee</button>
+  <button class="tab-btn" id="btn-carrefour" onclick="showTab('carrefour')">Carrefour</button>
+  <button class="tab-btn" id="btn-havanna" onclick="showTab('havanna')">Havanna</button>
 </div>
 
 <div id="tab-caba-amba" class="tab-panel active">
 
 <div class="filters">
-<strong>Filtros activos:</strong> AMBA · <strong>Esquina</strong> (obligatorio) · Esquina en avenida o calle importante (preferencial, suma) · <strong>150 a 300 m²</strong> · Planta libre (preferencia) · Publicados en las últimas 24-48 hs · Alquiler y Venta
+  <strong>Filtros activos:</strong> AMBA · <strong>Esquina</strong> (obligatorio) · Esquina en avenida o calle importante (preferencial, suma) · <strong>150 a 300 m²</strong> · Planta libre (preferencia) · Publicados en las últimas 24-48 hs · Alquiler y Venta
 </div>
 
 <div class="day-section">
-<div class="day-title">Viernes 17 de julio de 2026</div>
+  <div class="day-title">Viernes 17 de julio de 2026</div>
 
-<!-- Corrida 17/07: cambio de rango AMBA/Interior a 150-300 m2 (antes sin techo) aplicado a la búsqueda de hoy en adelante; no se revisan retroactivamente los avisos ya cargados en días anteriores. ZonaProp esquina+150-300m2 alquiler y venta revisados (orden más recientes): la mayoría de los resultados "desde ayer" con esquina confirmada superaban los 300m2 o eran duplicados de avisos ya cargados el 15-16/07 (Av Cordoba 1100, Esmeralda 600, Malabia 1500). Único candidato nuevo que cumplió esquina confirmada + rango + antigüedad razonable: Av. Santa Fe 1712. Candidatos de venta con esquina "desde ayer" resultaron mixtos (local+vivienda) y se excluyeron por ambigüedad de rubro. -->
+  <!-- Corrida 17/07: cambio de rango AMBA/Interior a 150-300 m2 (antes sin techo) aplicado a la búsqueda de hoy en adelante; no se revisan retroactivamente los avisos ya cargados en días anteriores. ZonaProp esquina+150-300m2 alquiler y venta revisados (orden más recientes): la mayoría de los resultados "desde ayer" con esquina confirmada superaban los 300m2 o eran duplicados de avisos ya cargados el 15-16/07 (Av Cordoba 1100, Esmeralda 600, Malabia 1500). Único candidato nuevo que cumplió esquina confirmada + rango + antigüedad razonable: Av. Santa Fe 1712. Candidatos de venta con esquina "desde ayer" resultaron mixtos (local+vivienda) y se excluyeron por ambigüedad de rubro. -->
 
-<div class="op-block">
-<div class="op-title alquiler">ALQUILER</div>
+  <div class="op-block">
+    <div class="op-title alquiler">ALQUILER</div>
 
-<div class="site-block">
-<div class="site-title zonaprop">ZONAPROP</div>
-<div class="cards">
+    <div class="site-block">
+      <div class="site-title zonaprop">ZONAPROP</div>
+      <div class="cards">
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/61/56/57/720x532/2065513687.jpg?isFirstImage=true" alt="Local en esquina, Av. Santa Fe 1712, Recoleta">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 5.000.000 + $500.000 expensas</div>
-<div class="card-address">Av. Santa Fe 1712 (esquina Rodriguez Peña)</div>
-<div class="card-zone">Recoleta, Capital Federal</div>
-<div class="card-specs">Esquina · 160 m² tot. · 2 baños · Frente 4 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-alquiler-comercial-a-la-calle-en-av-santa-fe-esquina-59615657.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/61/56/57/720x532/2065513687.jpg?isFirstImage=true" alt="Local en esquina, Av. Santa Fe 1712, Recoleta">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">$ 5.000.000 + $500.000 expensas</div>
+            <div class="card-address">Av. Santa Fe 1712 (esquina Rodriguez Peña)</div>
+            <div class="card-zone">Recoleta, Capital Federal</div>
+            <div class="card-specs">Esquina · 160 m² tot. · 2 baños · Frente 4 m</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-alquiler-comercial-a-la-calle-en-av-santa-fe-esquina-59615657.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
 
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="day-section">
-<div class="day-title">Jueves 16 de julio de 2026</div>
-
-<!-- Reorganizado 16/07 para dividir claramente por operación (antes estaba todo mezclado en un solo bloque por sitio). ArgenProp CABA: página 1 alquiler revisada, ningún aviso nuevo cumplió los filtros (esquina + frente); venta ArgenProp CABA devolvió resultado vacío con fetch simple. Ronda 2: ZonaProp CABA revisada de nuevo, 3 nuevos de alquiler. Ronda 3: AMBA Zona Sur (Quilmes) vía ArgenProp, 2 nuevos de alquiler; Zona Oeste sin candidatos ese día. -->
-
-<div class="op-block">
-<div class="op-title alquiler">ALQUILER</div>
-
-<div class="site-block">
-<div class="site-title zonaprop">ZONAPROP</div>
-<div class="cards">
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/41/10/51/360x266/2060554674.jpg" alt="Local en Palermo en esquina, Alvarez Thomas al 400">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 6.000</div>
-<div class="card-address">Alvarez Thomas al 400</div>
-<div class="card-zone">Palermo, Capital Federal</div>
-<div class="card-specs">200 m² tot. · 160 m² PB · 1 baño · Esquina · Con gas · Tiraje a 4 vientos · Apto gastronómico</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-palermo-en-esquina-59411051.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/02/81/38/360x266/2050576611.jpg" alt="Local Qiub, Juan B Justo 1500, Palermo">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 6.500</div>
-<div class="card-address">Juan B Justo al 1500</div>
-<div class="card-zone">Palermo, Capital Federal</div>
-<div class="card-specs">215 m² tot. · 1 baño · Esquina (3 calles) · Frente (sin confirmar)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-venta-y-alquiler-juan-b-justo-1500-qiub-59028138.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/55/60/53/31/360x266/2038452909.jpg" alt="Local en esquina, Peatonal Lavalle, Microcentro">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 3.000 + $185.000 expensas</div>
-<div class="card-address">Lavalle al 400 (esquina San Martín)</div>
-<div class="card-zone">Centro / Microcentro, Capital Federal</div>
-<div class="card-specs">234 m² tot. · 138 m² PB · 2 baños · Esquina · Frente 9,56 m (peatonal) · Apto gastronómico</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-en-microcentro.-peatonal-lavalle-55605331.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/46/94/82/360x266/2061980223.jpg" alt="Local en esquina, Av. Cabildo 2917, Nuñez">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 12.000.000</div>
-<div class="card-address">Av. Cabildo 2917 (esquina Av. Congreso)</div>
-<div class="card-zone">Núñez, Capital Federal</div>
-<div class="card-specs">606 m² tot. · 242 m² PB · Esquina · Frente (sin confirmar)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-zona-nunez-59469482.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/57/80/38/54/360x266/2017560967.jpg" alt="Local en esquina, Alem 855, Catalinas">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 30.000</div>
-<div class="card-address">Alem 855 (esquina Av. Córdoba)</div>
-<div class="card-zone">Retiro, Capital Federal</div>
-<div class="card-specs">472 m² tot. · 330 m² PB · Esquina · Frente 40 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-alem-855-catalinas-57803854.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/48/00/89/360x266/2062243289.jpg" alt="Esquina en Alquiler Colegiales">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 6.000.000</div>
-<div class="card-address">Capitán General Ramón Freire al 1300</div>
-<div class="card-zone">Colegiales, Capital Federal</div>
-<div class="card-specs">150 m² tot. · 2 amb. · 1 baño · Esquina</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-esquina-en-alquiler-colegiales-59480089.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/22/41/43/360x266/2064081433.jpg" alt="Local en Palermo Hollywood, esquina Uriarte y Gorriti">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 6.750.000</div>
-<div class="card-address">Uriarte 1491 (esquina Gorriti)</div>
-<div class="card-zone">Palermo Hollywood, Palermo</div>
-<div class="card-specs">170 m² tot. · 1 amb. · Esquina</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-palermo-hollywood-59224143.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/58/97/31/68/360x266/2049220527.jpg" alt="Excelente Local en Esquina, apto gastronómico, Puerto Madero">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 8.000</div>
-<div class="card-address">Rosario Vera Peñaloza 460</div>
-<div class="card-zone">Puerto Madero, Capital Federal</div>
-<div class="card-specs">267 m² tot. · Esquina · Apto gastronómico</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-excelente-local-en-esquina-apto-gastronomico-58973168.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="site-block">
-<div class="site-title inmoclick">INMOCLICK</div>
-<div class="cards">
-
-<div class="card">
-<img src="https://d1gzdkzy86t7i8.cloudfront.net/listings/34fef2ec-da20-47f4-83f4-e4e4c35191ac/portalv1/original/b01dabdd-8c24-488c-94dd-b1f0c4a968ef.jpg" alt="Local en esquina, Saavedra 800, San Cristóbal">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">US$ 3.500</div>
-<div class="card-address">Saavedra 800 (esquina Av. Independencia)</div>
-<div class="card-zone">San Cristóbal, Capital Federal</div>
-<div class="card-specs">207 m² tot. · 128 m² PB · 4 baños · Esquina · Frente 26 m · Sin gas</div>
-<a class="card-btn inmoclick" href="https://inmoclick.com/299085-re-max-class-iii/inmuebles/374/ficha/local-comercial-en-alquiler-en-saavedra-800" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://cdn-images.xintelweb.com/upload/e15e9a0bf003f4b4b59219587fa41174.jpg" alt="Local en esquina, Av. Córdoba 700, Microcentro">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 7.000.000</div>
-<div class="card-address">Av. Córdoba 700 (esquina Esmeralda)</div>
-<div class="card-zone">Centro / Microcentro, Capital Federal</div>
-<div class="card-specs">200 m² tot. · 2 baños · Esquina · Frente 33 m · Apto gastronómico</div>
-<a class="card-btn inmoclick" href="https://inmoclick.com/167018-berrueta-inmobiliaria/inmuebles/1362/ficha/local-comercial-en-alquiler-en-av-cordoba-700" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://static.tokkobroker.com/pictures/8417494_111315527449786923275668502946832497663037274042221551849173565961934694464136.jpg" alt="Local en esquina de Malabia y Gorriti, Palermo">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">US$ 5.900</div>
-<div class="card-address">Esquina Malabia y Gorriti</div>
-<div class="card-zone">Palermo, Capital Federal</div>
-<div class="card-specs">195 m² cubiertos · 3 baños · Esquina · Frente (sin confirmar) · Apto gastronómico</div>
-<a class="card-btn inmoclick" href="https://inmoclick.com/247713-real-billion/inmuebles/165/ficha/local-comercial-en-alquiler-en-alquiler-de-local-comercial-en-la-esquina-de-malabia-y-gorriti-amplia-y-luminosa-vidriera-ventanales-de-piso-a-techo-apto-gastronomico" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="site-block">
-<div class="site-title argenprop">ARGENPROP</div>
-<div class="cards">
-
-<div class="card">
-<img src="https://www.argenprop.com/static-content/25156771/35cc1c96-3292-4391-9056-b52c1446881e_u_medium.jpg" alt="Local esquina Peatonal Rivadavia y Moreno, Quilmes Centro">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">Consultar precio</div>
-<div class="card-address">Peatonal Rivadavia 100 (esquina Moreno)</div>
-<div class="card-zone">Quilmes Centro, AMBA Zona Sur</div>
-<div class="card-specs">200 m² tot. (2 unidos, 90 m² c/u) · 1 toilette · Esquina</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-centro--17765152" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://www.argenprop.com/static-content/11083981/3759043f-c584-4395-b996-bcdb61408531_u_medium.jpg" alt="Local en esquina Av. Cervantes y Av. Isidoro Iriarti, Ribera de Quilmes">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 2.500</div>
-<div class="card-address">Av. Cervantes esquina Av. Isidoro Iriarti</div>
-<div class="card-zone">Ribera de Quilmes, AMBA Zona Sur</div>
-<div class="card-specs">600 m² cub. · terreno 1.513 m² tot. · Esquina (esquina en avenida)</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-quilmes--18938011" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-<div class="op-block">
-<div class="op-title venta">VENTA</div>
-
-<div class="site-block">
-<div class="site-title zonaprop">ZONAPROP</div>
-<div class="cards">
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/20/98/88/360x266/2055317301.jpg" alt="Local Qiub en venta, Juan B Justo 1500, Palermo">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 1.909.600</div>
-<div class="card-address">Juan B Justo al 1500</div>
-<div class="card-zone">Palermo, Capital Federal</div>
-<div class="card-specs">248 m² tot. · 1 baño · Esquina (3 calles) · Frente (sin confirmar)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-en-venta-juan-b-justo-1500-qiub-palermo-59209888.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/57/17/94/02/360x266/2001478958.jpg" alt="Triple local en esquina, Lacroze 2300">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 1.950.000</div>
-<div class="card-address">Lacroze al 2300</div>
-<div class="card-zone">Palermo, Capital Federal</div>
-<div class="card-specs">540 m² tot. · 3 baños · Esquina · Frente 13 m · Tiraje a 4 vientos · Apto gastronómico</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-triple-local-en-palermo-57179402.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/01/43/53/360x266/2054631964.jpg" alt="Local en esquina, Av. Cobo 600, Parque Chacabuco">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 189.000</div>
-<div class="card-address">Av. Cobo al 600 (esquina Senillosa)</div>
-<div class="card-zone">Parque Chacabuco, Capital Federal</div>
-<div class="card-specs">170 m² cubiertos · 1 baño · Esquina · Frente 6,02 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-av-cobo-600-local-en-lote-propio-terreno-usam-acepta-59014353.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/34/22/99/360x266/2058533895.jpg" alt="Local comercial en esquina, Julian Alvarez y Castillo, Villa Crespo">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 450.000</div>
-<div class="card-address">Julián Álvarez esquina Castillo</div>
-<div class="card-zone">Villa Crespo, Capital Federal</div>
-<div class="card-specs">192,62 m² tot. · 126 m² PB · 4 baños · Esquina · Frente (sin confirmar)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-comercial-en-esquina-villa-crespo-julian-59342299.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/54/37/68/08/360x266/1929657930.jpg" alt="Weik Plaza, esquina Juramento y Vuelta de Obligado, Belgrano">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">Consultar precio</div>
-<div class="card-address">Weik Plaza - Esquina Juramento y Vuelta de Obligado</div>
-<div class="card-zone">Belgrano, Capital Federal</div>
-<div class="card-specs">363 m² tot. · 228 m² PB · 3 baños · Esquina · Frente 6 m · Apto gastronómico</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-emprendimiento-weik-plaza-local-belgrano-av-54376808.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/56/37/60/79/360x266/1979309387.jpg" alt="Local en esquina, Av. Rivadavia 9800, Villa Luro">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 2.950.000</div>
-<div class="card-address">Av. Rivadavia al 9800 (esquina Byron)</div>
-<div class="card-zone">Villa Luro, Capital Federal</div>
-<div class="card-specs">1050 m² tot. · 2 baños · Esquina · Frente (sin confirmar) · Planta libre</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-comercial-en-venta-1050-m-sup2--apto-todo-56376079.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="site-block">
-<div class="site-title inmoclick">INMOCLICK</div>
-<div class="cards">
-
-<div class="card">
-<img src="https://static.tokkobroker.com/pictures/7751843_24330311927252959371078563510995473297451713344159513307192355855792643163772.jpg" alt="Local comercial en esquina, Av. Corrientes 3781 esquina Bulnes, Almagro">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">US$ 798.900</div>
-<div class="card-address">Av. Corrientes 3781 (esquina Bulnes)</div>
-<div class="card-zone">Almagro, Capital Federal</div>
-<div class="card-specs">204 m² PB (lote) · Esquina · Frente (sin confirmar)</div>
-<a class="card-btn inmoclick" href="https://inmoclick.com/274306-coldwell-banker-lion-team/inmuebles/2273/ficha/local-comercial-en-venta-en-corrientes-al-3700" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
-
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 
 </div>
 
 <div class="day-section">
-<div class="day-title">Martes 15 de julio de 2026</div>
+  <div class="day-title">Jueves 16 de julio de 2026</div>
 
-<div class="site-block">
-<div class="site-title zonaprop">ZONAPROP</div>
-<div class="cards">
+  <!-- Reorganizado 16/07 para dividir claramente por operación (antes estaba todo mezclado en un solo bloque por sitio). ArgenProp CABA: página 1 alquiler revisada, ningún aviso nuevo cumplió los filtros (esquina + frente); venta ArgenProp CABA devolvió resultado vacío con fetch simple. Ronda 2: ZonaProp CABA revisada de nuevo, 3 nuevos de alquiler. Ronda 3: AMBA Zona Sur (Quilmes) vía ArgenProp, 2 nuevos de alquiler; Zona Oeste sin candidatos ese día. -->
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/61/49/50/360x266/2065493502.jpg" alt="Local Esmeralda al 600">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 6.500.000 + $1.800.000 expensas</div>
-<div class="card-address">Esmeralda al 600 (esquina Tucumán)</div>
-<div class="card-zone">Centro / Microcentro, Capital Federal</div>
-<div class="card-specs">350 m² tot. · 3 baños · Esquina · Frente ≈ 40 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-excelente-local-en-alquiler-en-esquina-con-gran-59614950.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
+  <div class="op-block">
+    <div class="op-title alquiler">ALQUILER</div>
+
+    <div class="site-block">
+      <div class="site-title zonaprop">ZONAPROP</div>
+      <div class="cards">
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/41/10/51/360x266/2060554674.jpg" alt="Local en Palermo en esquina, Alvarez Thomas al 400">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">USD 6.000</div>
+            <div class="card-address">Alvarez Thomas al 400</div>
+            <div class="card-zone">Palermo, Capital Federal</div>
+            <div class="card-specs">200 m² tot. · 160 m² PB · 1 baño · Esquina · Con gas · Tiraje a 4 vientos · Apto gastronómico</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-palermo-en-esquina-59411051.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/02/81/38/360x266/2050576611.jpg" alt="Local Qiub, Juan B Justo 1500, Palermo">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">USD 6.500</div>
+            <div class="card-address">Juan B Justo al 1500</div>
+            <div class="card-zone">Palermo, Capital Federal</div>
+            <div class="card-specs">215 m² tot. · 1 baño · Esquina (3 calles) · Frente (sin confirmar)</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-venta-y-alquiler-juan-b-justo-1500-qiub-59028138.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/55/60/53/31/360x266/2038452909.jpg" alt="Local en esquina, Peatonal Lavalle, Microcentro">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">USD 3.000 + $185.000 expensas</div>
+            <div class="card-address">Lavalle al 400 (esquina San Martín)</div>
+            <div class="card-zone">Centro / Microcentro, Capital Federal</div>
+            <div class="card-specs">234 m² tot. · 138 m² PB · 2 baños · Esquina · Frente 9,56 m (peatonal) · Apto gastronómico</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-en-microcentro.-peatonal-lavalle-55605331.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/46/94/82/360x266/2061980223.jpg" alt="Local en esquina, Av. Cabildo 2917, Nuñez">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">$ 12.000.000</div>
+            <div class="card-address">Av. Cabildo 2917 (esquina Av. Congreso)</div>
+            <div class="card-zone">Núñez, Capital Federal</div>
+            <div class="card-specs">606 m² tot. · 242 m² PB · Esquina · Frente (sin confirmar)</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-zona-nunez-59469482.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/57/80/38/54/360x266/2017560967.jpg" alt="Local en esquina, Alem 855, Catalinas">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">USD 30.000</div>
+            <div class="card-address">Alem 855 (esquina Av. Córdoba)</div>
+            <div class="card-zone">Retiro, Capital Federal</div>
+            <div class="card-specs">472 m² tot. · 330 m² PB · Esquina · Frente 40 m</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-alem-855-catalinas-57803854.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/48/00/89/360x266/2062243289.jpg" alt="Esquina en Alquiler Colegiales">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">$ 6.000.000</div>
+            <div class="card-address">Capitán General Ramón Freire al 1300</div>
+            <div class="card-zone">Colegiales, Capital Federal</div>
+            <div class="card-specs">150 m² tot. · 2 amb. · 1 baño · Esquina</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-esquina-en-alquiler-colegiales-59480089.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/22/41/43/360x266/2064081433.jpg" alt="Local en Palermo Hollywood, esquina Uriarte y Gorriti">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">$ 6.750.000</div>
+            <div class="card-address">Uriarte 1491 (esquina Gorriti)</div>
+            <div class="card-zone">Palermo Hollywood, Palermo</div>
+            <div class="card-specs">170 m² tot. · 1 amb. · Esquina</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-palermo-hollywood-59224143.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/58/97/31/68/360x266/2049220527.jpg" alt="Excelente Local en Esquina, apto gastronómico, Puerto Madero">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">USD 8.000</div>
+            <div class="card-address">Rosario Vera Peñaloza 460</div>
+            <div class="card-zone">Puerto Madero, Capital Federal</div>
+            <div class="card-specs">267 m² tot. · Esquina · Apto gastronómico</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-excelente-local-en-esquina-apto-gastronomico-58973168.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-block">
+      <div class="site-title inmoclick">INMOCLICK</div>
+      <div class="cards">
+
+        <div class="card">
+          <img src="https://d1gzdkzy86t7i8.cloudfront.net/listings/34fef2ec-da20-47f4-83f4-e4e4c35191ac/portalv1/original/b01dabdd-8c24-488c-94dd-b1f0c4a968ef.jpg" alt="Local en esquina, Saavedra 800, San Cristóbal">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">US$ 3.500</div>
+            <div class="card-address">Saavedra 800 (esquina Av. Independencia)</div>
+            <div class="card-zone">San Cristóbal, Capital Federal</div>
+            <div class="card-specs">207 m² tot. · 128 m² PB · 4 baños · Esquina · Frente 26 m · Sin gas</div>
+            <a class="card-btn inmoclick" href="https://inmoclick.com/299085-re-max-class-iii/inmuebles/374/ficha/local-comercial-en-alquiler-en-saavedra-800" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://cdn-images.xintelweb.com/upload/e15e9a0bf003f4b4b59219587fa41174.jpg" alt="Local en esquina, Av. Córdoba 700, Microcentro">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">$ 7.000.000</div>
+            <div class="card-address">Av. Córdoba 700 (esquina Esmeralda)</div>
+            <div class="card-zone">Centro / Microcentro, Capital Federal</div>
+            <div class="card-specs">200 m² tot. · 2 baños · Esquina · Frente 33 m · Apto gastronómico</div>
+            <a class="card-btn inmoclick" href="https://inmoclick.com/167018-berrueta-inmobiliaria/inmuebles/1362/ficha/local-comercial-en-alquiler-en-av-cordoba-700" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://static.tokkobroker.com/pictures/8417494_111315527449786923275668502946832497663037274042221551849173565961934694464136.jpg" alt="Local en esquina de Malabia y Gorriti, Palermo">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">US$ 5.900</div>
+            <div class="card-address">Esquina Malabia y Gorriti</div>
+            <div class="card-zone">Palermo, Capital Federal</div>
+            <div class="card-specs">195 m² cubiertos · 3 baños · Esquina · Frente (sin confirmar) · Apto gastronómico</div>
+            <a class="card-btn inmoclick" href="https://inmoclick.com/247713-real-billion/inmuebles/165/ficha/local-comercial-en-alquiler-en-alquiler-de-local-comercial-en-la-esquina-de-malabia-y-gorriti-amplia-y-luminosa-vidriera-ventanales-de-piso-a-techo-apto-gastronomico" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-block">
+      <div class="site-title argenprop">ARGENPROP</div>
+      <div class="cards">
+
+        <div class="card">
+          <img src="https://www.argenprop.com/static-content/25156771/35cc1c96-3292-4391-9056-b52c1446881e_u_medium.jpg" alt="Local esquina Peatonal Rivadavia y Moreno, Quilmes Centro">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">Consultar precio</div>
+            <div class="card-address">Peatonal Rivadavia 100 (esquina Moreno)</div>
+            <div class="card-zone">Quilmes Centro, AMBA Zona Sur</div>
+            <div class="card-specs">200 m² tot. (2 unidos, 90 m² c/u) · 1 toilette · Esquina</div>
+            <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-centro--17765152" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://www.argenprop.com/static-content/11083981/3759043f-c584-4395-b996-bcdb61408531_u_medium.jpg" alt="Local en esquina Av. Cervantes y Av. Isidoro Iriarti, Ribera de Quilmes">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">USD 2.500</div>
+            <div class="card-address">Av. Cervantes esquina Av. Isidoro Iriarti</div>
+            <div class="card-zone">Ribera de Quilmes, AMBA Zona Sur</div>
+            <div class="card-specs">600 m² cub. · terreno 1.513 m² tot. · Esquina (esquina en avenida)</div>
+            <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-quilmes--18938011" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="op-block">
+    <div class="op-title venta">VENTA</div>
+
+    <div class="site-block">
+      <div class="site-title zonaprop">ZONAPROP</div>
+      <div class="cards">
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/20/98/88/360x266/2055317301.jpg" alt="Local Qiub en venta, Juan B Justo 1500, Palermo">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+            <div class="card-price">USD 1.909.600</div>
+            <div class="card-address">Juan B Justo al 1500</div>
+            <div class="card-zone">Palermo, Capital Federal</div>
+            <div class="card-specs">248 m² tot. · 1 baño · Esquina (3 calles) · Frente (sin confirmar)</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-en-venta-juan-b-justo-1500-qiub-palermo-59209888.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/57/17/94/02/360x266/2001478958.jpg" alt="Triple local en esquina, Lacroze 2300">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+            <div class="card-price">USD 1.950.000</div>
+            <div class="card-address">Lacroze al 2300</div>
+            <div class="card-zone">Palermo, Capital Federal</div>
+            <div class="card-specs">540 m² tot. · 3 baños · Esquina · Frente 13 m · Tiraje a 4 vientos · Apto gastronómico</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-triple-local-en-palermo-57179402.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/01/43/53/360x266/2054631964.jpg" alt="Local en esquina, Av. Cobo 600, Parque Chacabuco">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+            <div class="card-price">USD 189.000</div>
+            <div class="card-address">Av. Cobo al 600 (esquina Senillosa)</div>
+            <div class="card-zone">Parque Chacabuco, Capital Federal</div>
+            <div class="card-specs">170 m² cubiertos · 1 baño · Esquina · Frente 6,02 m</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-av-cobo-600-local-en-lote-propio-terreno-usam-acepta-59014353.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/34/22/99/360x266/2058533895.jpg" alt="Local comercial en esquina, Julian Alvarez y Castillo, Villa Crespo">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+            <div class="card-price">USD 450.000</div>
+            <div class="card-address">Julián Álvarez esquina Castillo</div>
+            <div class="card-zone">Villa Crespo, Capital Federal</div>
+            <div class="card-specs">192,62 m² tot. · 126 m² PB · 4 baños · Esquina · Frente (sin confirmar)</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-comercial-en-esquina-villa-crespo-julian-59342299.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/54/37/68/08/360x266/1929657930.jpg" alt="Weik Plaza, esquina Juramento y Vuelta de Obligado, Belgrano">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+            <div class="card-price">Consultar precio</div>
+            <div class="card-address">Weik Plaza - Esquina Juramento y Vuelta de Obligado</div>
+            <div class="card-zone">Belgrano, Capital Federal</div>
+            <div class="card-specs">363 m² tot. · 228 m² PB · 3 baños · Esquina · Frente 6 m · Apto gastronómico</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-emprendimiento-weik-plaza-local-belgrano-av-54376808.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://imgar.zonapropcdn.com/avisos/1/00/56/37/60/79/360x266/1979309387.jpg" alt="Local en esquina, Av. Rivadavia 9800, Villa Luro">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+            <div class="card-price">USD 2.950.000</div>
+            <div class="card-address">Av. Rivadavia al 9800 (esquina Byron)</div>
+            <div class="card-zone">Villa Luro, Capital Federal</div>
+            <div class="card-specs">1050 m² tot. · 2 baños · Esquina · Frente (sin confirmar) · Planta libre</div>
+            <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-comercial-en-venta-1050-m-sup2--apto-todo-56376079.html" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-block">
+      <div class="site-title inmoclick">INMOCLICK</div>
+      <div class="cards">
+
+        <div class="card">
+          <img src="https://static.tokkobroker.com/pictures/7751843_24330311927252959371078563510995473297451713344159513307192355855792643163772.jpg" alt="Local comercial en esquina, Av. Corrientes 3781 esquina Bulnes, Almagro">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+            <div class="card-price">US$ 798.900</div>
+            <div class="card-address">Av. Corrientes 3781 (esquina Bulnes)</div>
+            <div class="card-zone">Almagro, Capital Federal</div>
+            <div class="card-specs">204 m² PB (lote) · Esquina · Frente (sin confirmar)</div>
+            <a class="card-btn inmoclick" href="https://inmoclick.com/274306-coldwell-banker-lion-team/inmuebles/2273/ficha/local-comercial-en-venta-en-corrientes-al-3700" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/40/36/89/360x266/2060369463.jpg" alt="Local Cabildo al 1900">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 13.900.000</div>
-<div class="card-address">Cabildo al 1900 (esquina Sucre)</div>
-<div class="card-zone">Belgrano, Capital Federal</div>
-<div class="card-specs">185 m² tot. · Esquina · Frente ≈ 20 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-cabildo-esquina-sucre-5-x-15-m-con-deposito-59403689.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+<div class="day-section">
+  <div class="day-title">Martes 15 de julio de 2026</div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/58/80/57/43/360x266/2044894310.jpg" alt="Fabrica textil en esquina Floresta">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 680.000</div>
-<div class="card-address">San Nicolás al 1200</div>
-<div class="card-zone">Floresta, Capital Federal</div>
-<div class="card-specs">750 m² cubiertos (2 lotes, 321 m² terreno) · Esquina · Frente 9,85 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-fabrica-textil-en-esquina-doble-lote-58805743.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+  <div class="site-block">
+    <div class="site-title zonaprop">ZONAPROP</div>
+    <div class="cards">
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/61/71/60/360x266/2065546620.jpg" alt="Local Barrio Norte esquina Av Cordoba y Cerrito">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 15.000.000 + $2.000.000 expensas</div>
-<div class="card-address">Avenida Córdoba al 1100 (esquina Cerrito)</div>
-<div class="card-zone">Barrio Norte, Capital Federal</div>
-<div class="card-specs">200 m² tot. · 110 m² PB · 1 baño · Esquina · Frente (sin confirmar)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-en-barrio-norte-en-esquina-59617160.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/61/49/50/360x266/2065493502.jpg" alt="Local Esmeralda al 600">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">$ 6.500.000 + $1.800.000 expensas</div>
+          <div class="card-address">Esmeralda al 600 (esquina Tucumán)</div>
+          <div class="card-zone">Centro / Microcentro, Capital Federal</div>
+          <div class="card-specs">350 m² tot. · 3 baños · Esquina · Frente ≈ 40 m</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-excelente-local-en-alquiler-en-esquina-con-gran-59614950.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/58/12/70/26/360x266/2035214869.jpg" alt="Local Av Corrientes esquina Velasco">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 8.000.000</div>
-<div class="card-address">Avenida Corrientes al 4800 (esquina Velasco)</div>
-<div class="card-zone">Villa Crespo, Capital Federal</div>
-<div class="card-specs">415 m² tot. · 4 baños · Esquina · Frente (sin confirmar) · Apto gastronómico</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-sobre-av-corrientes-en-esquina-58127026.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/40/36/89/360x266/2060369463.jpg" alt="Local Cabildo al 1900">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">$ 13.900.000</div>
+          <div class="card-address">Cabildo al 1900 (esquina Sucre)</div>
+          <div class="card-zone">Belgrano, Capital Federal</div>
+          <div class="card-specs">185 m² tot. · Esquina · Frente ≈ 20 m</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-cabildo-esquina-sucre-5-x-15-m-con-deposito-59403689.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/58/76/16/360x266/2064835678.jpg" alt="Local Malabia esquina Palermo Soho">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 5.900 + $1.300.000 expensas</div>
-<div class="card-address">Malabia al 1500</div>
-<div class="card-zone">Palermo Soho, Palermo</div>
-<div class="card-specs">200 m² tot. · 100 m² PB · 3 baños · Esquina · Frente (sin confirmar) · Con gas · Apto gastronómico</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-comercial-en-esquina-en-palermo-59587616.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/58/80/57/43/360x266/2044894310.jpg" alt="Fabrica textil en esquina Floresta">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+          <div class="card-price">USD 680.000</div>
+          <div class="card-address">San Nicolás al 1200</div>
+          <div class="card-zone">Floresta, Capital Federal</div>
+          <div class="card-specs">750 m² cubiertos (2 lotes, 321 m² terreno) · Esquina · Frente 9,85 m</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-fabrica-textil-en-esquina-doble-lote-58805743.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/33/08/93/360x266/2058265246.jpg" alt="Local esquina Elcano y Delgado, Colegiales">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 6.000</div>
-<div class="card-address">Delgado al 1300 (esquina Av. Elcano)</div>
-<div class="card-zone">Colegiales, Capital Federal</div>
-<div class="card-specs">300 m² tot. · 250 m² PB · 2 baños · Esquina · Frente (sin confirmar)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-esquina-av-elcano-y-delgado-59330893.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/61/71/60/360x266/2065546620.jpg" alt="Local Barrio Norte esquina Av Cordoba y Cerrito">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">$ 15.000.000 + $2.000.000 expensas</div>
+          <div class="card-address">Avenida Córdoba al 1100 (esquina Cerrito)</div>
+          <div class="card-zone">Barrio Norte, Capital Federal</div>
+          <div class="card-specs">200 m² tot. · 110 m² PB · 1 baño · Esquina · Frente (sin confirmar)</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-en-barrio-norte-en-esquina-59617160.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/27/40/95/360x266/2058927278.jpg" alt="Local Cabrera esquina Bulnes, Palermo">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 7.500.000</div>
-<div class="card-address">Cabrera al 3600 (esquina Bulnes)</div>
-<div class="card-zone">Palermo, Capital Federal</div>
-<div class="card-specs">305 m² tot. · 136 m² PB · 2 baños · Esquina · Frente 25 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-en-cabrera-esquina-bulnes-59274095.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/58/12/70/26/360x266/2035214869.jpg" alt="Local Av Corrientes esquina Velasco">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">$ 8.000.000</div>
+          <div class="card-address">Avenida Corrientes al 4800 (esquina Velasco)</div>
+          <div class="card-zone">Villa Crespo, Capital Federal</div>
+          <div class="card-specs">415 m² tot. · 4 baños · Esquina · Frente (sin confirmar) · Apto gastronómico</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-sobre-av-corrientes-en-esquina-58127026.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/57/63/65/48/360x266/2013136012.jpg" alt="Local esquina Quintana y Parera, Recoleta">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 6.500 + $1.030.000 expensas</div>
-<div class="card-address">Quintana al 100 (esquina Parera)</div>
-<div class="card-zone">Recoleta, Capital Federal</div>
-<div class="card-specs">314 m² tot. · 85 m² PB · 2 baños · Esquina · Frente 11 m (+3,5 m ochava)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-comercial-en-esquina-quintana-y-parera-57636548.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/58/76/16/360x266/2064835678.jpg" alt="Local Malabia esquina Palermo Soho">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">USD 5.900 + $1.300.000 expensas</div>
+          <div class="card-address">Malabia al 1500</div>
+          <div class="card-zone">Palermo Soho, Palermo</div>
+          <div class="card-specs">200 m² tot. · 100 m² PB · 3 baños · Esquina · Frente (sin confirmar) · Con gas · Apto gastronómico</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-comercial-en-esquina-en-palermo-59587616.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/58/60/65/77/360x266/2039597848.jpg" alt="Local esquina Quintana y Parera, Recoleta - venta">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 1.650.000 + $1.050.000 expensas</div>
-<div class="card-address">Quintana al 100 (esquina Parera)</div>
-<div class="card-zone">Recoleta, Capital Federal</div>
-<div class="card-specs">314 m² tot. · 85 m² PB · 2 baños · Esquina · Frente 11 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-venta-o-alquiler-local-en-recoleta-58606577.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/33/08/93/360x266/2058265246.jpg" alt="Local esquina Elcano y Delgado, Colegiales">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">USD 6.000</div>
+          <div class="card-address">Delgado al 1300 (esquina Av. Elcano)</div>
+          <div class="card-zone">Colegiales, Capital Federal</div>
+          <div class="card-specs">300 m² tot. · 250 m² PB · 2 baños · Esquina · Frente (sin confirmar)</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-esquina-av-elcano-y-delgado-59330893.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/56/33/59/86/360x266/1979596978.jpg" alt="Edificio esquina Cabildo, Belgrano">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 6.600.000</div>
-<div class="card-address">Cabildo al 700</div>
-<div class="card-zone">Belgrano, Capital Federal</div>
-<div class="card-specs">927 m² tot. · Esquina · Frente 11,3 m (con ochava)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-unica-esquina-sobre-cabildo-se-vende-edificio-en-56335986.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/27/40/95/360x266/2058927278.jpg" alt="Local Cabrera esquina Bulnes, Palermo">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">$ 7.500.000</div>
+          <div class="card-address">Cabrera al 3600 (esquina Bulnes)</div>
+          <div class="card-zone">Palermo, Capital Federal</div>
+          <div class="card-specs">305 m² tot. · 136 m² PB · 2 baños · Esquina · Frente 25 m</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-en-cabrera-esquina-bulnes-59274095.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/42/16/01/360x266/2060810885.jpg" alt="Local esquina Melincue y Campana, Villa del Parque">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 980.000</div>
-<div class="card-address">Melincué al 3300 (esquina Campana)</div>
-<div class="card-zone">Villa del Parque, Capital Federal</div>
-<div class="card-specs">200 m² tot. · 160 m² PB · 2 baños · Esquina · Frente (sin confirmar)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-comercial-para-venta-en-villa-del-parque-59421601.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/57/63/65/48/360x266/2013136012.jpg" alt="Local esquina Quintana y Parera, Recoleta">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">USD 6.500 + $1.030.000 expensas</div>
+          <div class="card-address">Quintana al 100 (esquina Parera)</div>
+          <div class="card-zone">Recoleta, Capital Federal</div>
+          <div class="card-specs">314 m² tot. · 85 m² PB · 2 baños · Esquina · Frente 11 m (+3,5 m ochava)</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-comercial-en-esquina-quintana-y-parera-57636548.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/27/29/90/360x266/2056851101.jpg" alt="Local esquina Cordoba y Talcahuano, Tribunales">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 1.200.000 + $668.000 expensas</div>
-<div class="card-address">Córdoba y Talcahuano al 1300 (esquina)</div>
-<div class="card-zone">Tribunales, Capital Federal</div>
-<div class="card-specs">384 m² tot. · 172 m² PB · 3 baños · Esquina · Frente (sin confirmar)</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-venta-local-comercial-en-esquina.-tribunales.-59272990.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/58/60/65/77/360x266/2039597848.jpg" alt="Local esquina Quintana y Parera, Recoleta - venta">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+          <div class="card-price">USD 1.650.000 + $1.050.000 expensas</div>
+          <div class="card-address">Quintana al 100 (esquina Parera)</div>
+          <div class="card-zone">Recoleta, Capital Federal</div>
+          <div class="card-specs">314 m² tot. · 85 m² PB · 2 baños · Esquina · Frente 11 m</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-venta-o-alquiler-local-en-recoleta-58606577.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/54/92/05/07/360x266/1978514303.jpg" alt="Local esquina Paraguay, Barrio Norte">
-<div class="card-body">
-<div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
-<div class="card-price">USD 1.200.000</div>
-<div class="card-address">Paraguay 2614</div>
-<div class="card-zone">Barrio Norte, Capital Federal</div>
-<div class="card-specs">236 m² tot. · 139 m² PB · 2 baños · Esquina · Frente 28 m · Apto gastronómico</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-en-alquiler-a-estrenar-zona-barrio-norte-54920507.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/56/33/59/86/360x266/1979596978.jpg" alt="Edificio esquina Cabildo, Belgrano">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+          <div class="card-price">USD 6.600.000</div>
+          <div class="card-address">Cabildo al 700</div>
+          <div class="card-zone">Belgrano, Capital Federal</div>
+          <div class="card-specs">927 m² tot. · Esquina · Frente 11,3 m (con ochava)</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-unica-esquina-sobre-cabildo-se-vende-edificio-en-56335986.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/42/16/01/360x266/2060810885.jpg" alt="Local esquina Melincue y Campana, Villa del Parque">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+          <div class="card-price">USD 980.000</div>
+          <div class="card-address">Melincué al 3300 (esquina Campana)</div>
+          <div class="card-zone">Villa del Parque, Capital Federal</div>
+          <div class="card-specs">200 m² tot. · 160 m² PB · 2 baños · Esquina · Frente (sin confirmar)</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-comercial-para-venta-en-villa-del-parque-59421601.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="site-block">
-<div class="site-title argenprop">ARGENPROP</div>
-<div class="cards">
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/27/29/90/360x266/2056851101.jpg" alt="Local esquina Cordoba y Talcahuano, Tribunales">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+          <div class="card-price">USD 1.200.000 + $668.000 expensas</div>
+          <div class="card-address">Córdoba y Talcahuano al 1300 (esquina)</div>
+          <div class="card-zone">Tribunales, Capital Federal</div>
+          <div class="card-specs">384 m² tot. · 172 m² PB · 3 baños · Esquina · Frente (sin confirmar)</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-venta-local-comercial-en-esquina.-tribunales.-59272990.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://www.argenprop.com/static-content/39203391/2a55f108-5504-466a-b1d8-9081f88eb4d6_u_medium.jpg" alt="Local Pedro Goyena esquina Beauchef">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 15.000</div>
-<div class="card-address">Av. Pedro Goyena al 300 (esquina Beauchef)</div>
-<div class="card-zone">Caballito, Capital Federal</div>
-<div class="card-specs">552 m² tot. · 337 m² PB · 2 baños · Esquina · Frente 16 m · Con gas · Tiraje a 4 vientos · Apto gastronómico · Planta libre</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-caballito--19330293" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/54/92/05/07/360x266/1978514303.jpg" alt="Local esquina Paraguay, Barrio Norte">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-venta">VENTA</span> · Local Comercial</div>
+          <div class="card-price">USD 1.200.000</div>
+          <div class="card-address">Paraguay 2614</div>
+          <div class="card-zone">Barrio Norte, Capital Federal</div>
+          <div class="card-specs">236 m² tot. · 139 m² PB · 2 baños · Esquina · Frente 28 m · Apto gastronómico</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-en-alquiler-a-estrenar-zona-barrio-norte-54920507.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-</div>
-</div>
+    </div>
+  </div>
+
+  <div class="site-block">
+    <div class="site-title argenprop">ARGENPROP</div>
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://www.argenprop.com/static-content/39203391/2a55f108-5504-466a-b1d8-9081f88eb4d6_u_medium.jpg" alt="Local Pedro Goyena esquina Beauchef">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">USD 15.000</div>
+          <div class="card-address">Av. Pedro Goyena al 300 (esquina Beauchef)</div>
+          <div class="card-zone">Caballito, Capital Federal</div>
+          <div class="card-specs">552 m² tot. · 337 m² PB · 2 baños · Esquina · Frente 16 m · Con gas · Tiraje a 4 vientos · Apto gastronómico · Planta libre</div>
+          <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-caballito--19330293" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </div>
 
@@ -725,101 +729,101 @@ font-style: italic;
 <div id="tab-interior" class="tab-panel">
 
 <div class="filters">
-<strong>Filtros activos:</strong> Interior del país (excluye AMBA) · <strong>Esquina</strong> (obligatorio, salvo locales sobre peatonales) · Locales sobre peatonales (no requieren esquina) · Esquina en avenida o calle importante (preferencial, suma) · <strong>150 a 300 m²</strong> · Planta libre (preferencia) · Publicados en las últimas 24-48 hs · Alquiler y Venta
+  <strong>Filtros activos:</strong> Interior del país (excluye AMBA) · <strong>Esquina</strong> (obligatorio, salvo locales sobre peatonales) · Locales sobre peatonales (no requieren esquina) · Esquina en avenida o calle importante (preferencial, suma) · <strong>150 a 300 m²</strong> · Planta libre (preferencia) · Publicados en las últimas 24-48 hs · Alquiler y Venta
 </div>
 
 <div class="day-section">
-<div class="day-title">Viernes 17 de julio de 2026</div>
+  <div class="day-title">Viernes 17 de julio de 2026</div>
 
-<!-- Corrida 17/07: Rosario (ArgenProp, más nuevos) revisado de nuevo, sin candidatos nuevos que no fueran duplicados (Sarmiento 999 y Pte. Roca 601 ya cargados el 16/07). Mendoza Capital revisado por primera vez: 1 candidato nuevo con esquina confirmada dentro de rango. Faltan por revisar: Córdoba Capital, Tucumán, Mar del Plata, Salta y el resto de las provincias. -->
+  <!-- Corrida 17/07: Rosario (ArgenProp, más nuevos) revisado de nuevo, sin candidatos nuevos que no fueran duplicados (Sarmiento 999 y Pte. Roca 601 ya cargados el 16/07). Mendoza Capital revisado por primera vez: 1 candidato nuevo con esquina confirmada dentro de rango. Faltan por revisar: Córdoba Capital, Tucumán, Mar del Plata, Salta y el resto de las provincias. -->
 
-<div class="op-block">
-<div class="op-title alquiler">ALQUILER</div>
+  <div class="op-block">
+    <div class="op-title alquiler">ALQUILER</div>
 
-<div class="site-block">
-<div class="site-title argenprop">ARGENPROP</div>
-<div class="cards">
+    <div class="site-block">
+      <div class="site-title argenprop">ARGENPROP</div>
+      <div class="cards">
 
-<div class="card">
-<img src="https://www.argenprop.com/static-content/07276991/ab19ec35-e0ca-49b1-a7ce-31f540c7e66f_u_medium.jpg" alt="Local en esquina, Av. Belgrano 1300, Mendoza">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 2.700</div>
-<div class="card-address">Av. Belgrano 1300 (esquina Leonidas Aguirre)</div>
-<div class="card-zone">Mendoza Capital, Mendoza</div>
-<div class="card-specs">Esquina · 205 m² tot. · 2 baños · Frente (sin confirmar)</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-mendoza--19967270" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+        <div class="card">
+          <img src="https://www.argenprop.com/static-content/07276991/ab19ec35-e0ca-49b1-a7ce-31f540c7e66f_u_medium.jpg" alt="Local en esquina, Av. Belgrano 1300, Mendoza">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">USD 2.700</div>
+            <div class="card-address">Av. Belgrano 1300 (esquina Leonidas Aguirre)</div>
+            <div class="card-zone">Mendoza Capital, Mendoza</div>
+            <div class="card-specs">Esquina · 205 m² tot. · 2 baños · Frente (sin confirmar)</div>
+            <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-mendoza--19967270" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
 
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 
 </div>
 
 <div class="day-section">
-<div class="day-title">Jueves 16 de julio de 2026</div>
+  <div class="day-title">Jueves 16 de julio de 2026</div>
 
-<!-- Primera carga de esta pestaña (16/07). Fuente revisada: ArgenProp por ciudad/provincia (patrón /locales/alquiler/{ciudad}). Rosario (Santa Fe) dio 4 candidatos válidos (esquina y/o peatonal + 150m²) en la primera página. Córdoba Capital revisada (87 avisos, primera página): ningún candidato cumplió esquina/peatonal + 150m² ese día. Faltan por revisar: Mendoza, Tucumán, Mar del Plata, Salta y el resto de las provincias — se irán sumando en próximas corridas. -->
+  <!-- Primera carga de esta pestaña (16/07). Fuente revisada: ArgenProp por ciudad/provincia (patrón /locales/alquiler/{ciudad}). Rosario (Santa Fe) dio 4 candidatos válidos (esquina y/o peatonal + 150m²) en la primera página. Córdoba Capital revisada (87 avisos, primera página): ningún candidato cumplió esquina/peatonal + 150m² ese día. Faltan por revisar: Mendoza, Tucumán, Mar del Plata, Salta y el resto de las provincias — se irán sumando en próximas corridas. -->
 
-<div class="op-block">
-<div class="op-title alquiler">ALQUILER</div>
+  <div class="op-block">
+    <div class="op-title alquiler">ALQUILER</div>
 
-<div class="site-block">
-<div class="site-title argenprop">ARGENPROP</div>
-<div class="cards">
+    <div class="site-block">
+      <div class="site-title argenprop">ARGENPROP</div>
+      <div class="cards">
 
-<div class="card">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 7.500.000</div>
-<div class="card-address">Peatonal Córdoba y San Martín</div>
-<div class="card-zone">Centro, Rosario, Santa Fe</div>
-<div class="card-specs">180 m² tot. · Esquina · Sobre peatonal</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-rosario--19653515" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">$ 7.500.000</div>
+            <div class="card-address">Peatonal Córdoba y San Martín</div>
+            <div class="card-zone">Centro, Rosario, Santa Fe</div>
+            <div class="card-specs">180 m² tot. · Esquina · Sobre peatonal</div>
+            <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-rosario--19653515" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
 
-<div class="card">
-<img src="https://www.argenprop.com/static-content/58338391/da90d755-a9e8-4ca9-9bb3-cb327e0b6dbd_u_medium.jpg" alt="Local en esquina San Luis y Sarmiento, Centro, Rosario">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 4.000.000 + $30.000 expensas</div>
-<div class="card-address">Sarmiento 999 (esquina San Luis)</div>
-<div class="card-zone">Centro, Rosario, Santa Fe</div>
-<div class="card-specs">171 m² tot. (165 m² cub.) · 1 baño · Esquina</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-centro--19383385" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+        <div class="card">
+          <img src="https://www.argenprop.com/static-content/58338391/da90d755-a9e8-4ca9-9bb3-cb327e0b6dbd_u_medium.jpg" alt="Local en esquina San Luis y Sarmiento, Centro, Rosario">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">$ 4.000.000 + $30.000 expensas</div>
+            <div class="card-address">Sarmiento 999 (esquina San Luis)</div>
+            <div class="card-zone">Centro, Rosario, Santa Fe</div>
+            <div class="card-specs">171 m² tot. (165 m² cub.) · 1 baño · Esquina</div>
+            <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-centro--19383385" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
 
-<div class="card">
-<img src="https://www.argenprop.com/static-content/11090711/790a5735-d1b9-494d-ae0e-62fc72bb540c_u_medium.jpg" alt="Local en esquina Pte. Roca y San Lorenzo, Centro, Rosario">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 4.500.000</div>
-<div class="card-address">Pte. Roca 601 (esquina San Lorenzo)</div>
-<div class="card-zone">Centro, Rosario, Santa Fe</div>
-<div class="card-specs">280 m² tot. · 250 m² PB · 2 baños · Esquina · Frente 16 m</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-centro--11709011" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+        <div class="card">
+          <img src="https://www.argenprop.com/static-content/11090711/790a5735-d1b9-494d-ae0e-62fc72bb540c_u_medium.jpg" alt="Local en esquina Pte. Roca y San Lorenzo, Centro, Rosario">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">$ 4.500.000</div>
+            <div class="card-address">Pte. Roca 601 (esquina San Lorenzo)</div>
+            <div class="card-zone">Centro, Rosario, Santa Fe</div>
+            <div class="card-specs">280 m² tot. · 250 m² PB · 2 baños · Esquina · Frente 16 m</div>
+            <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-centro--11709011" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
 
-<div class="card">
-<img src="https://www.argenprop.com/static-content/77561291/672a669d-6544-41cb-8ad4-41301dfdbfb2_u_medium.jpg" alt="Local en esquina Av. San Martín y Anchorena, Tiro Suizo, Rosario">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 1.000.000</div>
-<div class="card-address">Av. San Martín esquina Anchorena</div>
-<div class="card-zone">Tiro Suizo, Rosario, Santa Fe</div>
-<div class="card-specs">160 m² tot. · Esquina (esquina en avenida) · Con gas</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-tiro-suizo--19216577" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+        <div class="card">
+          <img src="https://www.argenprop.com/static-content/77561291/672a669d-6544-41cb-8ad4-41301dfdbfb2_u_medium.jpg" alt="Local en esquina Av. San Martín y Anchorena, Tiro Suizo, Rosario">
+          <div class="card-body">
+            <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+            <div class="card-price">$ 1.000.000</div>
+            <div class="card-address">Av. San Martín esquina Anchorena</div>
+            <div class="card-zone">Tiro Suizo, Rosario, Santa Fe</div>
+            <div class="card-specs">160 m² tot. · Esquina (esquina en avenida) · Con gas</div>
+            <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-tiro-suizo--19216577" target="_blank" rel="noopener">Ir al aviso</a>
+          </div>
+        </div>
 
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 
 </div>
 
@@ -828,45 +832,44 @@ font-style: italic;
 <div id="tab-bumpie" class="tab-panel">
 
 <div class="filters">
-<strong>Cliente:</strong> Bumpie (Indumentaria) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>150 a 200 m²</strong> · Ex local de indumentaria (preferencia) · Zonas: Morón, Los Polvorines, José León Suárez, Triunvirato, José C. Paz, Caballito, Berazategui
+  <strong>Cliente:</strong> Bumpie (Indumentaria) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>150 a 200 m²</strong> · Ex local de indumentaria (preferencia) · Zonas: Morón, Los Polvorines, José León Suárez, Triunvirato, José C. Paz, Caballito, Berazategui
 </div>
 
 <div class="day-section">
-<div class="day-title">Viernes 17 de julio de 2026</div>
+  <div class="day-title">Viernes 17 de julio de 2026</div>
 
-<!-- Primera carga de esta pestaña (17/07). Fuentes revisadas: ArgenProp por zona (Morón/Haedo, Caballito). Sin datos aún de Los Polvorines, José León Suárez, José C. Paz, Triunvirato ni Berazategui — quedan pendientes para próximas corridas. Ninguno de los dos avisos confirma rubro anterior de indumentaria; califican igual por cumplir el resto de los criterios. -->
+  <!-- Primera carga de esta pestaña (17/07). Fuentes revisadas: ArgenProp por zona (Morón/Haedo, Caballito). Sin datos aún de Los Polvorines, José León Suárez, José C. Paz, Triunvirato ni Berazategui — quedan pendientes para próximas corridas. Ninguno de los dos avisos confirma rubro anterior de indumentaria; califican igual por cumplir el resto de los criterios. -->
 
-<div class="site-block">
-<div class="site-title argenprop">ARGENPROP</div>
-<div class="cards">
+  <div class="site-block">
+    <div class="site-title argenprop">ARGENPROP</div>
+    <div class="cards">
 
-<div class="card">
-<img src="https://www.argenprop.com/static-content/73663691/295d90ac-2c29-49b4-b6e4-7502c590ae6f_u_medium.jpg" alt="Local comercial, Av. Rivadavia 16900, Haedo">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 1.800.000</div>
-<div class="card-address">Av. Rivadavia 16900</div>
-<div class="card-zone">Haedo, Partido de Morón</div>
-<div class="card-specs">180 m² tot. · 2 baños</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-haedo--19636637" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://www.argenprop.com/static-content/73663691/295d90ac-2c29-49b4-b6e4-7502c590ae6f_u_medium.jpg" alt="Local comercial, Av. Rivadavia 16900, Haedo">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">$ 1.800.000</div>
+          <div class="card-address">Av. Rivadavia 16900</div>
+          <div class="card-zone">Haedo, Partido de Morón</div>
+          <div class="card-specs">180 m² tot. · 2 baños</div>
+          <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-haedo--19636637" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-<div class="card">
-<img src="https://www.argenprop.com/static-content/89350791/12839245-61d1-4901-8cf9-f9bf5375fc9c_u_medium.jpg" alt="Local en esquina, Valle 900, Caballito">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 5.500.000</div>
-<div class="card-address">Valle 900 (esquina Del Barco Centenera)</div>
-<div class="card-zone">Caballito, Capital Federal</div>
-<div class="card-specs">Esquina · 160 m² tot. · 2 baños</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-caballito--19705398" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://www.argenprop.com/static-content/89350791/12839245-61d1-4901-8cf9-f9bf5375fc9c_u_medium.jpg" alt="Local en esquina, Valle 900, Caballito">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">$ 5.500.000</div>
+          <div class="card-address">Valle 900 (esquina Del Barco Centenera)</div>
+          <div class="card-zone">Caballito, Capital Federal</div>
+          <div class="card-specs">Esquina · 160 m² tot. · 2 baños</div>
+          <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-caballito--19705398" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-</div>
-</div>
-
+    </div>
+  </div>
 </div>
 
 </div>
@@ -874,33 +877,32 @@ font-style: italic;
 <div id="tab-wayfarer" class="tab-panel">
 
 <div class="filters">
-<strong>Cliente:</strong> Wayfarer (Indumentaria) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>80 a 100 m²</strong> · Ex local de indumentaria (preferencia) · Zona: San Carlos de Bariloche
+  <strong>Cliente:</strong> Wayfarer (Indumentaria) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>80 a 100 m²</strong> · Ex local de indumentaria (preferencia) · Zona: San Carlos de Bariloche
 </div>
 
 <div class="day-section">
-<div class="day-title">Viernes 17 de julio de 2026</div>
+  <div class="day-title">Viernes 17 de julio de 2026</div>
 
-<!-- Primera carga de esta pestaña (17/07). Fuente: ArgenProp por ciudad (san-carlos-de-bariloche), 9 avisos totales revisados, 1 solo dentro del rango 80-100 m². Rubro anterior no confirmado como indumentaria. -->
+  <!-- Primera carga de esta pestaña (17/07). Fuente: ArgenProp por ciudad (san-carlos-de-bariloche), 9 avisos totales revisados, 1 solo dentro del rango 80-100 m². Rubro anterior no confirmado como indumentaria. -->
 
-<div class="site-block">
-<div class="site-title argenprop">ARGENPROP</div>
-<div class="cards">
+  <div class="site-block">
+    <div class="site-title argenprop">ARGENPROP</div>
+    <div class="cards">
 
-<div class="card">
-<img src="https://www.argenprop.com/static-content/74755991/70ed2dd3-9e7a-4ac0-bd99-51430b5e9e51_u_medium.jpg" alt="Local comercial, Lonquimay 3900, Bariloche">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 2.500.000 + $50.000 expensas</div>
-<div class="card-address">Lonquimay 3900</div>
-<div class="card-zone">Melipal, San Carlos de Bariloche, Río Negro</div>
-<div class="card-specs">94 m² tot. · 2 baños</div>
-<a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-san-carlos-de-bariloche--19955747" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://www.argenprop.com/static-content/74755991/70ed2dd3-9e7a-4ac0-bd99-51430b5e9e51_u_medium.jpg" alt="Local comercial, Lonquimay 3900, Bariloche">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">$ 2.500.000 + $50.000 expensas</div>
+          <div class="card-address">Lonquimay 3900</div>
+          <div class="card-zone">Melipal, San Carlos de Bariloche, Río Negro</div>
+          <div class="card-specs">94 m² tot. · 2 baños</div>
+          <a class="card-btn argenprop" href="https://www.argenprop.com/local-en-alquiler-en-san-carlos-de-bariloche--19955747" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-</div>
-</div>
-
+    </div>
+  </div>
 </div>
 
 </div>
@@ -908,33 +910,32 @@ font-style: italic;
 <div id="tab-northville" class="tab-panel">
 
 <div class="filters">
-<strong>Cliente:</strong> Northville (Indumentaria) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>100 a 120 m²</strong> · Ex local de indumentaria (preferencia) · Zona: Belgrano, sobre Av. Cabildo
+  <strong>Cliente:</strong> Northville (Indumentaria) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>100 a 120 m²</strong> · Ex local de indumentaria (preferencia) · Zona: Belgrano, sobre Av. Cabildo
 </div>
 
 <div class="day-section">
-<div class="day-title">Viernes 17 de julio de 2026</div>
+  <div class="day-title">Viernes 17 de julio de 2026</div>
 
-<!-- Primera carga de esta pestaña (17/07). Fuente: ZonaProp, filtro Belgrano 100-120 m², orden más recientes. Candidato elegido está directamente sobre Av. Cabildo (prioridad del cliente), publicado el mismo día. -->
+  <!-- Primera carga de esta pestaña (17/07). Fuente: ZonaProp, filtro Belgrano 100-120 m², orden más recientes. Candidato elegido está directamente sobre Av. Cabildo (prioridad del cliente), publicado el mismo día. -->
 
-<div class="site-block">
-<div class="site-title zonaprop">ZONAPROP</div>
-<div class="cards">
+  <div class="site-block">
+    <div class="site-title zonaprop">ZONAPROP</div>
+    <div class="cards">
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/62/54/16/720x532/2065750491.jpg?isFirstImage=true" alt="Local en Av. Cabildo 1700, Belgrano">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">USD 6.400</div>
-<div class="card-address">Av. Cabildo 1700 (y La Pampa)</div>
-<div class="card-zone">Belgrano, Capital Federal</div>
-<div class="card-specs">115 m² tot. · 1 baño · Frente 4 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-alquiler-local-belgrano-av-cabildo-y-la-pampa-59625416.html" target="_blank" rel="noopener">Ir al aviso</a>
-</div>
-</div>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/62/54/16/720x532/2065750491.jpg?isFirstImage=true" alt="Local en Av. Cabildo 1700, Belgrano">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">USD 6.400</div>
+          <div class="card-address">Av. Cabildo 1700 (y La Pampa)</div>
+          <div class="card-zone">Belgrano, Capital Federal</div>
+          <div class="card-specs">115 m² tot. · 1 baño · Frente 4 m</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-alquiler-local-belgrano-av-cabildo-y-la-pampa-59625416.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
 
-</div>
-</div>
-
+    </div>
+  </div>
 </div>
 
 </div>
@@ -942,43 +943,90 @@ font-style: italic;
 <div id="tab-freddo" class="tab-panel">
 
 <div class="filters">
-<strong>Cliente:</strong> Freddo (Heladería) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>70 a 150 m²</strong> · Alquiler orientativo $3.500.000–$5.000.000 · <strong>Frente mínimo 5,5-6 m</strong> · Esquina (preferencia) · Ex heladería (preferencia)
+  <strong>Cliente:</strong> Freddo (Heladería) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>70 a 150 m²</strong> · Alquiler orientativo $3.500.000–$5.000.000 · <strong>Frente mínimo 5,5-6 m</strong> · Esquina (preferencia) · Ex heladería (preferencia)
 </div>
 
 <div class="day-section">
-<div class="day-title">Viernes 17 de julio de 2026</div>
+  <div class="day-title">Viernes 17 de julio de 2026</div>
 
-<!-- Primera carga de esta pestaña (17/07). Fuente: ZonaProp, filtro CABA 70-150 m², orden más recientes. Se priorizaron avisos con frente explícito en metros ≥5,5 m; varios candidatos con frente de 3,5-4 m fueron descartados por no cumplir el mínimo. Zona sin restricción específica del cliente aún — se buscó en CABA por defecto. -->
+  <!-- Primera carga de esta pestaña (17/07). Fuente: ZonaProp, filtro CABA 70-150 m², orden más recientes. Se priorizaron avisos con frente explícito en metros ≥5,5 m; varios candidatos con frente de 3,5-4 m fueron descartados por no cumplir el mínimo. Zona sin restricción específica del cliente aún — se buscó en CABA por defecto. -->
 
-<div class="site-block">
-<div class="site-title zonaprop">ZONAPROP</div>
-<div class="cards">
+  <div class="site-block">
+    <div class="site-title zonaprop">ZONAPROP</div>
+    <div class="cards">
 
-<div class="card">
-<img src="https://imgar.zonapropcdn.com/avisos/1/00/59/62/77/57/720x532/2065802912.jpg?isFirstImage=true" alt="Local con amplio frente, Av. Rivadavia 6038, Caballito">
-<div class="card-body">
-<div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
-<div class="card-price">$ 3.500.000 + $300.000 expensas</div>
-<div class="card-address">Av. Rivadavia 6038</div>
-<div class="card-zone">Caballito, Capital Federal</div>
-<div class="card-specs">141 m² tot. · 2 baños · Frente 6,5 m</div>
-<a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-alquiler-de-local-comercial-amplio-frente-y-entre-59627757.html" target="_blank" rel="noopener">Ir al aviso</a>
+      <div class="card">
+        <img src="https://imgar.zonapropcdn.com/avisos/1/00/59/62/77/57/720x532/2065802912.jpg?isFirstImage=true" alt="Local con amplio frente, Av. Rivadavia 6038, Caballito">
+        <div class="card-body">
+          <div class="card-tags"><span class="op-alquiler">ALQUILER</span> · Local Comercial</div>
+          <div class="card-price">$ 3.500.000 + $300.000 expensas</div>
+          <div class="card-address">Av. Rivadavia 6038</div>
+          <div class="card-zone">Caballito, Capital Federal</div>
+          <div class="card-specs">141 m² tot. · 2 baños · Frente 6,5 m</div>
+          <a class="card-btn" href="https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-alquiler-de-local-comercial-amplio-frente-y-entre-59627757.html" target="_blank" rel="noopener">Ir al aviso</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
+
+</div>
+
+<div id="tab-chapaypintura" class="tab-panel">
+
+<div class="filters">
+  <strong>Cliente:</strong> Taller Chapa y Pintura · <strong>Filtros activos:</strong> Alquiler · Galpón o local comercial <strong>150 a 400 m²</strong> · No sobre avenidas principales · Zonas: Vicente López, Martínez, San Isidro, Tigre, San Fernando, Benavídez
+</div>
+
+<div class="day-section">
+  <p class="empty-note">Sin resultados todavía — primera búsqueda pendiente.</p>
 </div>
 
 </div>
+
+<div id="tab-bostani" class="tab-panel">
+
+<div class="filters">
+  <strong>Cliente:</strong> Bostani Coffee (contacto: Gastón) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>80 a 150 m²</strong> · Esquina (preferencia) · Ex cafetería (preferencia) · No requiere gas ni tiraje a 4 vientos · Zonas: CABA · Pcia. Buenos Aires: Olivos, Vicente López, San Isidro, Pilar · Interior: Mendoza, Rosario, Mar del Plata, Neuquén, Córdoba
 </div>
 
+<div class="day-section">
+  <p class="empty-note">Sin resultados todavía — primera búsqueda pendiente.</p>
+</div>
+
+</div>
+
+<div id="tab-carrefour" class="tab-panel">
+
+<div class="filters">
+  <strong>Cliente:</strong> Carrefour · <strong>Filtros activos:</strong> Alquiler · Local comercial en planta baja <strong>180 a 250 m²</strong> · <strong>Mínimo 4 cuadras de otro Carrefour</strong> · Ex supermercado (preferencia) · Zona: CABA
+</div>
+
+<div class="day-section">
+  <p class="empty-note">Sin resultados todavía — primera búsqueda pendiente.</p>
+</div>
+
+</div>
+
+<div id="tab-havanna" class="tab-panel">
+
+<div class="filters">
+  <strong>Cliente:</strong> Havanna · <strong>Filtros activos:</strong> Alquiler · Local comercial en planta baja <strong>150 m²</strong> · <strong>8 a 10 cuadras de otro Havanna</strong> · Presupuesto $5.000.000–$11.000.000 · Esquina (preferencia) · Ex cafetería (preferencia) · Zona: CABA
+</div>
+
+<div class="day-section">
+  <p class="empty-note">Sin resultados todavía — primera búsqueda pendiente.</p>
 </div>
 
 </div>
 
 <script>
 function showTab(name) {
-document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
-document.getElementById('tab-' + name).classList.add('active');
-document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
-document.getElementById('btn-' + name).classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('btn-' + name).classList.add('active');
 }
 </script>
 
