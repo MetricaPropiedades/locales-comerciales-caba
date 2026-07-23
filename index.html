@@ -177,6 +177,65 @@
     font-size: 13px;
     font-style: italic;
   }
+
+  .app-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    padding: 16px 10px;
+    position: sticky;
+    top: 24px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+  .sidebar-group-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #999;
+    font-weight: 700;
+    margin: 16px 10px 6px 10px;
+  }
+  .sidebar-group-title:first-child { margin-top: 4px; }
+  .tab-btn.sidebar-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 2px;
+  }
+  .tab-btn.sidebar-btn:hover { background: #f0f0f2; }
+  .tab-btn.sidebar-btn.active {
+    background: #222;
+    color: #fff;
+  }
+  .content-area {
+    flex: 1;
+    min-width: 0;
+  }
+  @media (max-width: 720px) {
+    .app-layout { flex-direction: column; }
+    .sidebar {
+      position: static;
+      width: 100%;
+      max-height: none;
+    }
+  }
 </style>
 </head>
 <body>
@@ -186,28 +245,31 @@
   <p>Se actualiza todos los días a las 9am. Se muestran los últimos 15 días de búsqueda de cada pestaña. Cada pestaña es un filtro independiente: los resultados no se mezclan entre pestañas.</p>
 </div>
 
-<div class="tab-bar">
-  <button class="tab-btn active" id="btn-caba-amba" onclick="showTab('caba-amba')">AMBA</button>
-  <button class="tab-btn" id="btn-interior" onclick="showTab('interior')">Interior del País</button>
-  <button class="tab-btn" id="btn-bumpie" onclick="showTab('bumpie')">Bumpie</button>
-  <button class="tab-btn" id="btn-wayfarer" onclick="showTab('wayfarer')">Wayfarer</button>
-  <button class="tab-btn" id="btn-freddo" onclick="showTab('freddo')">Freddo</button>
-  <button class="tab-btn" id="btn-chapaypintura" onclick="showTab('chapaypintura')">Taller Chapa y Pintura</button>
-  <button class="tab-btn" id="btn-bostani" onclick="showTab('bostani')">Bostani Coffee</button>
-  <button class="tab-btn" id="btn-carrefour" onclick="showTab('carrefour')">Carrefour</button>
-  <button class="tab-btn" id="btn-havanna" onclick="showTab('havanna')">Havanna</button>
-  <button class="tab-btn" id="btn-rappi" onclick="showTab('rappi')">Rappi</button>
-  <button class="tab-btn" id="btn-petshop-naturallife" onclick="showTab('petshop-naturallife')">Pet Shop-Natural Life</button>
-  <button class="tab-btn" id="btn-pedidosya" onclick="showTab('pedidosya')">Pedidos Ya</button>
-  <button class="tab-btn" id="btn-bigpons" onclick="showTab('bigpons')">Big Pons</button>
-  <button class="tab-btn" id="btn-hunterville" onclick="showTab('hunterville')">Hunterville</button>
-  <button class="tab-btn" id="btn-osde-nunez" onclick="showTab('osde-nunez')">Osde Núñez</button>
-  <button class="tab-btn" id="btn-osde-nordelta-belgrano" onclick="showTab('osde-nordelta-belgrano')">Osde Nordelta y Belgrano</button>
-  <button class="tab-btn" id="btn-osde-barracas-flores" onclick="showTab('osde-barracas-flores')">Osde Barracas y Flores</button>
-  <button class="tab-btn" id="btn-openpharma" onclick="showTab('openpharma')">Open Pharma</button>
-  <button class="tab-btn" id="btn-osde-olivos" onclick="showTab('osde-olivos')">Osde Olivos</button>
-</div>
-
+<div class="app-layout">
+  <div class="sidebar">
+    <div class="sidebar-group-title">General</div>
+    <button class="tab-btn sidebar-btn active" id="btn-caba-amba" onclick="showTab('caba-amba')">AMBA</button>
+    <button class="tab-btn sidebar-btn" id="btn-interior" onclick="showTab('interior')">Interior del País</button>
+    <div class="sidebar-group-title">Clientes puntuales</div>
+    <button class="tab-btn sidebar-btn" id="btn-bumpie" onclick="showTab('bumpie')">Bumpie</button>
+    <button class="tab-btn sidebar-btn" id="btn-wayfarer" onclick="showTab('wayfarer')">Wayfarer</button>
+    <button class="tab-btn sidebar-btn" id="btn-freddo" onclick="showTab('freddo')">Freddo</button>
+    <button class="tab-btn sidebar-btn" id="btn-chapaypintura" onclick="showTab('chapaypintura')">Taller Chapa y Pintura</button>
+    <button class="tab-btn sidebar-btn" id="btn-bostani" onclick="showTab('bostani')">Bostani Coffee</button>
+    <button class="tab-btn sidebar-btn" id="btn-carrefour" onclick="showTab('carrefour')">Carrefour</button>
+    <button class="tab-btn sidebar-btn" id="btn-havanna" onclick="showTab('havanna')">Havanna</button>
+    <button class="tab-btn sidebar-btn" id="btn-rappi" onclick="showTab('rappi')">Rappi</button>
+    <button class="tab-btn sidebar-btn" id="btn-petshop-naturallife" onclick="showTab('petshop-naturallife')">Pet Shop-Natural Life</button>
+    <button class="tab-btn sidebar-btn" id="btn-pedidosya" onclick="showTab('pedidosya')">Pedidos Ya</button>
+    <button class="tab-btn sidebar-btn" id="btn-bigpons" onclick="showTab('bigpons')">Big Pons</button>
+    <button class="tab-btn sidebar-btn" id="btn-hunterville" onclick="showTab('hunterville')">Hunterville</button>
+    <button class="tab-btn sidebar-btn" id="btn-osde-nunez" onclick="showTab('osde-nunez')">Osde Núñez</button>
+    <button class="tab-btn sidebar-btn" id="btn-osde-nordelta-belgrano" onclick="showTab('osde-nordelta-belgrano')">Osde Nordelta y Belgrano</button>
+    <button class="tab-btn sidebar-btn" id="btn-osde-barracas-flores" onclick="showTab('osde-barracas-flores')">Osde Barracas y Flores</button>
+    <button class="tab-btn sidebar-btn" id="btn-openpharma" onclick="showTab('openpharma')">Open Pharma</button>
+    <button class="tab-btn sidebar-btn" id="btn-osde-olivos" onclick="showTab('osde-olivos')">Osde Olivos</button>
+  </div>
+  <div class="content-area">
 <div id="tab-caba-amba" class="tab-panel active">
 
 <div class="filters">
@@ -1353,6 +1415,9 @@
   <p class="empty-note">Sin resultados todavía — primera búsqueda pendiente.</p>
 </div>
 
+</div>
+
+  </div>
 </div>
 
 <script>
