@@ -86,6 +86,15 @@ font-size: 13px;
 color: #444;
 }
 .filters strong { color: #111; font-weight: 700; }
+.filters-cliente { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+.filters-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: #999; font-weight: 700; margin: 0 0 6px 0; }
+.filters-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 8px; }
+.filters-list li { background: #f6f7f9; border: 1px solid #e5e5e5; border-radius: 7px; padding: 5px 11px; font-size: 12.5px; color: #444; line-height: 1.45; }
+.filters-list li.filters-note { background: #fffaf0; border-color: #f0e0c0; flex-basis: 100%; font-style: italic; color: #7a6a4a; }
+.filters-list li strong { color: #111; }
+.tag { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 10px; font-size: 9.5px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; vertical-align: middle; }
+.tag-oblig { background: #fdecea; color: #c0392b; }
+.tag-pref { background: #eaf3fc; color: #2b6cb0; }
 .day-section {
 max-width: 1000px;
 margin: 0 auto 32px auto;
@@ -1481,6 +1490,53 @@ function showTab(id) {
   document.getElementById('tab-' + id).classList.add('active');
   document.getElementById('btn-' + id).classList.add('active');
 }
+
+// 19/08: transforma cada bloque de filtros (texto corrido separado por "·") en tarjeta + lista,
+// sin tocar el HTML fuente que carga la busqueda diaria. Corre una sola vez al cargar la pagina.
+function formatFiltersBlocks() {
+  document.querySelectorAll('.filters').forEach(function (el) {
+    if (el.dataset.formatted === '1') return;
+    var raw = el.innerHTML;
+
+    // proteger bloques <em>...</em> (notas para brokers) para que no se corten si tienen "·" adentro
+    var protectedSpans = [];
+    var safe = raw.replace(/<em>[\s\S]*?<\/em>/g, function (m) {
+      protectedSpans.push(m);
+      return '\u0000' + (protectedSpans.length - 1) + '\u0000';
+    });
+
+    var parts = safe.split(' · ').map(function (s) { return s.trim(); }).filter(Boolean);
+    parts = parts.map(function (p) {
+      return p.replace(/\u0000(\d+)\u0000/g, function (_, i) { return protectedSpans[parseInt(i, 10)]; });
+    });
+    if (!parts.length) return;
+
+    var clienteHtml = '';
+    if (/<strong>Cliente:<\/strong>/.test(parts[0])) {
+      clienteHtml = parts.shift().replace('<strong>Cliente:</strong>', '').trim();
+    }
+    if (parts.length) {
+      parts[0] = parts[0].replace('<strong>Filtros activos:</strong>', '').trim();
+    }
+
+    var liHtml = parts.map(function (item) {
+      var isNote = /^<em>/.test(item);
+      item = item.replace(/\(obligatorio\)/gi, '<span class="tag tag-oblig">obligatorio</span>');
+      item = item.replace(/\(preferencia\)/gi, '<span class="tag tag-pref">preferencia</span>');
+      return '<li' + (isNote ? ' class="filters-note"' : '') + '>' + item + '</li>';
+    }).join('');
+
+    var out = '';
+    if (clienteHtml) {
+      out += '<div class="filters-eyebrow">Cliente</div><div class="filters-cliente">' + clienteHtml + '</div>';
+    }
+    out += '<div class="filters-eyebrow">Filtros activos</div><ul class="filters-list">' + liHtml + '</ul>';
+
+    el.innerHTML = out;
+    el.dataset.formatted = '1';
+  });
+}
+document.addEventListener('DOMContentLoaded', formatFiltersBlocks);
 </script>
 <!-- NOTA DE PUBLICACION 04/08: Claude in Chrome no estaba conectado en esta sesion (list_connected_browsers devolvio []), por lo que no se pudo publicar en GitHub Pages esta corrida. El archivo queda sincronizado en la carpeta local del cliente (OneDrive), listo para publicarse manualmente o en la proxima corrida con Chrome disponible. -->
 </body>
