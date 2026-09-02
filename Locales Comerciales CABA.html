@@ -1550,13 +1550,15 @@ document.addEventListener('DOMContentLoaded', formatFiltersBlocks);
 </script>
 <!-- NOTA DE PUBLICACION 04/08: Claude in Chrome no estaba conectado en esta sesion (list_connected_browsers devolvio []), por lo que no se pudo publicar en GitHub Pages esta corrida. El archivo queda sincronizado en la carpeta local del cliente (OneDrive), listo para publicarse manualmente o en la proxima corrida con Chrome disponible. -->
 <style>
-.resp-inline{display:inline-block;background:#e3f2fd;border:1px solid #90caf9;border-radius:4px;padding:3px 8px;margin-right:10px;font-size:0.85em;vertical-align:middle}
-.resp-inline label{font-weight:600;color:#0d47a1;margin-right:4px}
-.resp-input{border:1px solid #90caf9;border-radius:3px;padding:2px 5px;width:150px;font-size:0.9em}
-.meta-box{margin-top:10px;padding:10px;background:#fff8e1;border:1px solid #e0c26a;border-radius:6px;font-size:0.85em}
-.meta-box label{display:block;font-weight:600;margin-bottom:2px;color:#7a5c00}
-.meta-box textarea{width:100%;box-sizing:border-box;padding:5px;min-height:50px;border:1px solid #ccc;border-radius:4px;font-size:0.95em;resize:vertical}
-.save-indicator{font-size:0.8em;color:#2e7d32;margin-left:4px}
+.resp-inline{display:inline-block;background:transparent;border:1px solid #d8d8d8;border-radius:4px;padding:3px 8px;margin-right:10px;margin-bottom:6px;font-size:0.82em;vertical-align:middle;color:#666}
+.resp-inline label{font-weight:500;color:#888;margin-right:4px}
+.resp-input{border:none;border-bottom:1px solid #ccc;border-radius:0;padding:1px 2px;width:140px;font-size:0.9em;background:transparent;color:#333}
+.resp-input:focus{outline:none;border-bottom-color:#999}
+.meta-box{margin-top:10px;padding:8px 10px;background:#fafafa;border:1px solid #e5e5e5;border-radius:4px;font-size:0.82em}
+.meta-box label{display:block;font-weight:500;margin-bottom:3px;color:#888}
+.meta-box textarea{width:100%;box-sizing:border-box;padding:5px;min-height:44px;border:1px solid #e0e0e0;border-radius:3px;font-size:0.9em;resize:vertical;background:#fff;color:#333}
+.meta-box textarea:focus{outline:none;border-color:#bbb}
+.save-indicator{font-size:0.78em;color:#999;margin-left:4px}
 </style>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
