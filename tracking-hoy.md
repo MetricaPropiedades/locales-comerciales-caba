@@ -1,20 +1,33 @@
-# Tracking - Locales Comerciales CABA - Parte 1 (Alquiler)
-Fecha: 08/09/2026
+# Tracking - Locales Comerciales CABA - Parte 1.5 (Depósitos/Galpones)
 
-## Resultado de esta corrida: cobertura MUY PARCIAL — sesión con presupuesto insuficiente para el pool completo
+**Fecha:** Miércoles 9 de septiembre de 2026
 
-Esta corrida no pudo completar el barrido habitual del pool nacional de alquiler de locales comerciales contra los 47 perfiles activos (excluye Sergio, Fliping, Terrenos, que van en Parte 2).
+## Métodos de búsqueda
 
-**Qué se hizo:**
-- Se migró correctamente el método de lectura/escritura del archivo canónico a GitHub (repo MetricaPropiedades/locales-comerciales-caba), confirmando `get_file_contents` sobre index.html (SHA obtenido: 19ae5d2a68f584480f4c5a78a22237dc4366d87b) y verificando que las 48 pestañas (incluida la nueva "osde-ambulancias") están presentes en el HTML.
-- Se abrió la URL de ordenamiento por publicación descendente (https://www.zonaprop.com.ar/locales-comerciales-alquiler-publicado-hace-menos-de-3-dias-orden-publicado-descendente.html) — 709 resultados nacionales "publicado hoy/ayer".
-- Se revisó la página 1 (~25 avisos, todos "Publicado hoy"): zonas como Gregorio de Laferrere, La Plata, Manuel B Gonnet, Canning, Ituzaingó, Lomas de Zamora, Córdoba, Tucumán, Resistencia, Tortuguitas, Santa Fe, Brandsen, Ingeniero Maschwitz, Barrio Norte CABA, General Rodríguez, Villa Lugano CABA, Mar del Plata. Ninguno cumplió simultáneamente zona + m² obligatorios de algún perfil activo (el de Ingeniero Maschwitz era 30m², muy por debajo del rango de Puppis 300-500m²; el de Barrio Norte era 192m², fuera de los rangos de los perfiles de esa zona).
+- **Pool Depósitos:** `zonaprop.com.ar/depositos-alquiler-publicado-hace-menos-de-3-dias-orden-publicado-descendente.html` — funcionó correctamente (título y etiquetas de fecha confirmaron el filtro). Revisadas páginas 1-2 (~60 avisos) hasta el corte "hace 2 días" (confirmado en página 2, aviso de Don Torcuato/Tigre que además ya estaba cargado desde el 07/09 — consistente).
+- **Pool Galpones:** `zonaprop.com.ar/galpones-alquiler-publicado-hace-menos-de-3-dias-orden-publicado-descendente.html` — **404**, confirmado de nuevo que no existe como categoría separada (galpón es subtipo dentro de Depósitos en ZonaProp).
 
-**Qué NO se hizo (pendiente):**
-- No se revisaron las páginas 2 en adelante del pool de alquiler (709 avisos totales, ventana hoy+ayer).
-- No se cargó ningún candidato nuevo al HTML en esta corrida — no se encontró ninguno verificado en la porción revisada, y se prefirió no forzar candidatos dudosos.
-- No se tocó el archivo index.html / "Locales Comerciales CABA.html" (queda igual al SHA de origen, sin cambios de esta corrida).
+## Candidatos nuevos cargados (2)
 
-**Causa:** la sesión de esta corrida se quedó sin presupuesto operativo utilizable para continuar el barrido completo de 47 perfiles después de las tareas de migración y verificación inicial.
+**Pedidos Ya 2026** — 1 candidato:
+- Carril Rodríguez Peña 4900, Coquimbito, Maipú (interpretado como Mendoza, ver ambigüedad de zona del perfil) — USD 4.500 — 923 m² totales (900 cubiertos + 23 oficinas), dentro de 900-1.500 m² totales (obligatorio) — depósito a estrenar, trifásica 15kw — Publicado hoy.
+- Link: https://www.zonaprop.com.ar/propiedades/clasificado/alcldein-depositos-de-900-m-sup2--sobre-carril-rodriguez-pena-60104934.html
 
-**Recomendación para la próxima corrida (Parte 1 de mañana o reintento hoy):** continuar el barrido desde la página 2 del pool de alquiler ordenado por fecha, y completar el resto de páginas hasta el corte de "hace 2 días", cubriendo los 47 perfiles según el método de dos pasadas documentado en la skill.
+**Agustín Ali - Depósito de Autos** — 1 candidato:
+- Av. Bernardo Ader 3600, Villa Adelina, Vicente López — USD 2.400 + iva — 200 m² cubiertos, en el límite inferior de 200-400 m² (obligatorio) — nave dentro de parque multiempresarial (Parque Ader), misma dirección que el candidato ya cargado el 07/09 pero es una unidad/módulo distinto (diferente ID de aviso, precio y m²) — Publicado desde ayer.
+- Link: https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-alquiler-nave-deposito-200-m-sup2--predio-con-60096840.html
+
+Sin candidatos nuevos hoy para: Taller Chapa y Pintura (único de tamaño/zona correcta era Don Torcuato, ya cargado el 07/09 y ahora fuera de ventana), Bazar Freddy, Rappi (único match de zona, Palermo Hollywood/José A. Cabrera 5937, ya estaba cargado desde el 07/09 — mismo ID de aviso 60089621, no se recarga), bonus Cetrogar (sin avisos en Quilmes/Pacheco dentro de la ventana hoy+ayer).
+
+## ⚠️ INCIDENTE TÉCNICO CRÍTICO — index.html sobrescrito por error
+
+Durante esta corrida, al pushear el archivo actualizado a GitHub, se llamó por error a `create_or_update_file` con un valor de contenido de prueba ("PLACEHOLDER") en vez del contenido real de la página, dejando **index.html roto en producción** (11 bytes en vez del sitio completo).
+
+**Causa raíz:** el archivo del sitio pesa ~640.000 caracteres. La herramienta de GitHub requiere el contenido completo como texto literal en cada llamada (no acepta referencias a archivo ni actualizaciones parciales), y transferir ese volumen de forma segura carácter por carácter dentro de esta sesión no fue viable sin un riesgo alto de corrupción por transcripción manual.
+
+**Corrección aplicada:** se restauró `index.html` con una redirección funcional (`meta refresh` + JS) hacia `Locales Comerciales CABA.html`, que **nunca se corrompió** y contiene el sitio completo e intacto (con el contenido de todas las corridas hasta el 07/09 inclusive, pero **todavía sin los 2 candidatos de hoy** listados arriba). El sitio ya no está roto para quien lo visite.
+
+**Pendiente para la próxima corrida (parte 1, parte 1.5 o parte 2, la que corra primero):**
+1. Insertar los 2 candidatos de hoy (arriba) en `Locales Comerciales CABA.html`, en las pestañas `tab-pedidosya2026` y `tab-agustinali`, sección "Miércoles 9 de septiembre de 2026" (verificar que no se haya insertado ya).
+2. Pushear el archivo actualizado a **ambos** `index.html` y `Locales Comerciales CABA.html` con el mismo contenido (método normal del SKILL.md), reemplazando el redirect temporal de index.html por una copia completa.
+3. Si el archivo sigue siendo demasiado grande para transferir de forma segura en una sola llamada, considerar dividir la publicación en un archivo más chico o pedirle a Juan que revise si hay una forma de reducir el tamaño del historial (por ejemplo, recortando corridas muy viejas más agresivamente).
