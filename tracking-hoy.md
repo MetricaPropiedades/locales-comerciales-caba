@@ -1,26 +1,24 @@
-# Tracking - Locales Comerciales CABA (Parte 1 - Pool ALQUILER)
-Fecha: 14/09/2026
+# Tracking - Locales Comerciales CABA (Parte 1.5 - Pool DEPÓSITOS/GALPONES)
+Fecha: 15/09/2026
 
 ## Cobertura
-- URL: https://www.zonaprop.com.ar/locales-comerciales-alquiler-publicado-hace-menos-de-3-dias-orden-publicado-descendente.html
-- Páginas leídas: 1 a 5 (hasta agotar la ventana hoy+ayer -- se llegó al corte de fecha, primer aviso "Publicado hace 2 días" detectado en página 5, ítem "Docta" href ...60139435; todo lo posterior a ese punto se descartó por estar fuera de ventana).
-- ~140 avisos evaluados contra los 40 perfiles de ALQUILER activos en esta parte (se excluyó Sergio, Fliping, Terrenos, y los sub-casos depósito/galpón que cubre la Parte 1.5, según instrucción).
-- Extracción hecha vía DOM (JS) para resolver href real de cada aviso antes de evaluar -- ningún candidato se cargó con href vacío.
+- Pool Depósitos: https://www.zonaprop.com.ar/depositos-alquiler-publicado-hace-menos-de-3-dias-orden-publicado-descendente.html — FUNCIONÓ correctamente, título confirmado "72 Depósitos más recientes publicado hace menos de 3 dias en alquiler en Argentina".
+- Páginas leídas: 1, 2 y 3. Se frenó en los avisos "Publicado hace 2 días" de la página 2 (últimos incluidos en la evaluación); página 3 arrancaba directo en "Publicado hace 3 días", por lo que quedó fuera de ventana y no se seguyó leyendo.
+- Total evaluados dentro de ventana (hoy + ayer + hace 2 días): ~45 avisos, contra los 5 perfiles de esta tarea (Taller Chapa y Pintura, Rappi, Bazar Freddy, Agustín Ali, Pedidos Ya 2026) + bonus Cetrogar.
+- Pool Galpones: probado https://www.zonaprop.com.ar/galpones-alquiler-publicado-hace-menos-de-3-dias-orden-publicado-descendente.html y también https://www.zonaprop.com.ar/galpones-alquiler.html — AMBAS URLs dan Error 404. Confirmado: ZonaProp NO tiene una categoría/URL separada para "Galpones"; los galpones aparecen mezclados dentro del pool de Depósitos (muchos avisos del pool de Depósitos se autodescriben como "galpón"). No se perdió tiempo adicional en esto.
 
-## Candidatos nuevos genuinos
-- **Julián Ciprés** (perfil #47): Suipacha al 500 (526, entre Tucumán y Lavalle), Centro/Microcentro, Capital Federal. 180 m² cubiertos (planta baja + subsuelo), $3.000.000. Gas/tiraje a 4 vientos no confirmado explícitamente en el aviso (preferencia, no excluyente). Link: https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-microcentro-60143383.html
+## Candidatos nuevos encontrados
+Ninguno. Se revisaron todos los avisos dentro de la ventana de fecha contra los 5 perfiles + bonus:
+- **Taller Chapa y Pintura** (Vicente López, Martínez, San Isidro, Tigre, San Fernando, Benavídez; 150-400 m²): los únicos avisos en zonas correctas (Ombu 1200, Florida, Vicente López — 500 m²; Roberto Laplace 3100, Don Torcuato, Tigre — 450 m²) superan el rango de m² permitido.
+- **Rappi** (zonas actualizadas 10/09: Adrogué, Villa Ballester, San Justo/La Matanza, Caseros, Villa Madero, San Fernando, Colegiales, Floresta, Barrio Norte, Almagro, Chacarita, Once, Avellaneda, Quilmes, Ituzaingó; 300-600 m²): ningún aviso dentro de la ventana cae en esas zonas con el m² requerido (los de Floresta e Ituzaingó vistos eran de 100-160 m², muy por debajo del rango).
+- **Bazar Freddy** (Bella Vista/San Miguel, Chascomús; 900-2.000 m²): sin avisos en esas zonas dentro de la ventana.
+- **Agustín Ali** (San Isidro, Villa Adelina; 200-400 m² obligatorio): el único aviso en Villa Adelina (Domingo de Acassuso 6600) ofrece desde 500 m² hasta 10.000 m², por debajo del piso mínimo no hay opción — no cumple el tope de 400 m².
+- **Pedidos Ya 2026** (900-1.500 m² totales; múltiples zonas): ningún aviso dentro de la ventana cae en las zonas de la lista con ese rango de m².
+- **Bonus Cetrogar** (Quilmes, Pacheco; 400-1.000 m²): el único aviso en Quilmes visto (USD 36.000, 6.000 m², Calle 144, Berazategui — no es Quilmes en sí) está fuera de rango de m² y de zona exacta.
 
-## Descartes relevantes (misma dirección física ya cargada en corridas anteriores, solo con nuevo código de aviso -- NO se recargan, siguiendo la práctica ya establecida en el archivo)
-- Florida al 300 (Microcentro) -- ya cargado en Julián Ciprés.
-- Av. Córdoba al 2400 y Av. Callao 2093 (Recoleta) -- ya cargados en Café Martínez.
-- Santa Fe al 4500 (Palermo) y Av. Rivadavia 10001 (Villa Luro) -- ya cargados en Adidas.
-- José María Moreno al 100 (Caballito) y Av. Forest al 500 (Chacarita) -- ya cargados en Thermomix.
-- El Salvador 4406, Cabrera 5100/Thames, Uriarte 1300, El Salvador 5700 (todos Palermo Soho, esquina) -- ya cargados en AMBA.
-Resto del pool (~125 avisos): evaluado contra criterios obligatorios de los 40 perfiles (m², zona, tipo de operación) -- sin matches adicionales (mayoría fuera de rango de m² o fuera de zonas obligatorias, varios en Uruguay/otras provincias sin perfil aplicable).
-
-## INCIDENTE TÉCNICO -- push del HTML principal pendiente
-El archivo "Locales Comerciales CABA.html" (~695 KB) fue editado localmente en esta sesión (1 tarjeta nueva agregada a la pestaña Julián Ciprés, balance de divs verificado: 7132 abre / 7132 cierra) pero **no se pudo pushear a GitHub en esta corrida**: las herramientas de lectura de archivo disponibles en esta sesión tienen un límite de ~25.000 tokens por lectura (muy por debajo de los ~170.000 tokens que ocupa el archivo completo), y la herramienta de escritura a GitHub requiere el contenido completo como un único parámetro de texto. Reconstruir y reenviar ~700 KB de HTML a mano en esta sesión tenía alto riesgo de truncar o corromper el archivo canónico, así que se optó por NO arriesgar el archivo publicado y documentar el candidato acá en su lugar (siguiendo la regla de "documentar en vez de publicar" ante una falla de guardado).
-**Acción pendiente para la próxima corrida (Parte 1.5 o Parte 2, o próxima Parte 1):** cargar manualmente la tarjeta de Julián Ciprés (Suipacha al 500, detalle arriba) en el HTML publicado, ya que sigue sin estar en la versión pública.
+## Método de búsqueda — qué funcionó y qué no
+- URL de Depósitos con filtro de fecha: funcionó sin problemas, título y etiquetas de fecha visibles y correctos.
+- URL de Galpones (con o sin filtro de fecha): 404 en ambos casos — no existe esa categoría separada en ZonaProp, confirmado nuevamente.
 
 ## Presupuesto
-Corrida completada dentro de presupuesto de sesión, sin necesidad de corte anticipado por presupuesto.
+Corrida completada dentro de presupuesto, sin necesidad de corte anticipado. No hubo candidatos para cargar, por lo que no se tocó "Locales Comerciales CABA.html" ni se hizo push de ese archivo en esta corrida (solo se actualiza este tracking).
