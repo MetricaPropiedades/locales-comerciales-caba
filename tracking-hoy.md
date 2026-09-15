@@ -25,3 +25,37 @@ El entorno de shell (bash) de esta corrida falló de forma persistente con un er
 - Pool Galpones: no existe como categoría separada en ZonaProp — confirmado 404 en ambas variantes de URL.
 - 1 solo candidato borderline (Avellaneda / Rappi, 630m² vs. rango 300-600m², USD 2.100/mes) — no cargado por falla del entorno bash, link real arriba.
 - Ningún candidato para Taller Chapa y Pintura, Bazar Freddy, Agustín Ali, Pedidos Ya 2026 ni Cetrogar hoy.
+
+---
+
+# Tracking - CORRIDA DE COMPLETADO Parte 1 (15/09), 16:00hs — pool ALQUILER páginas 5-9
+
+## Contexto
+Corrida única para continuar la cobertura del pool nacional de alquiler que la corrida normal de Parte 1 (15/09, 14:05hs) dejó incompleta: esa corrida solo llegó a las páginas 1-4 de ~456-480 avisos y solo evaluó contra un subconjunto de 5 perfiles (AMBA, Interior, KFC, Carrefour, Havanna) en vez de los 48 perfiles activos completos. Esta corrida retomó desde la página 5, evaluando cada aviso contra los 48 perfiles completos (ver SKILL.md de "locales-comerciales-caba-diario").
+
+## Cobertura lograda
+- URL: https://www.zonaprop.com.ar/locales-comerciales-alquiler-publicado-hace-menos-de-3-dias-orden-publicado-descendente.html
+- Páginas cubiertas esta corrida: 5, 6, 7, 8 y 9 (todos los avisos en estas páginas están "Publicado desde ayer", dentro de la ventana hoy+ayer válida).
+- Página 10 en adelante: BLOQUEADA por un challenge de seguridad de Cloudflare ("Just a moment... Performing security verification") que no se resolvió tras múltiples reintentos (esperas de 5-10s, renavegación desde la página 1 del pool, intentos repetidos). No es el mismo problema de "sitio caído" reportado falsamente en la corrida anterior — el sitio funciona, pero el acceso profundo a esa página puntual quedó bloqueado por el challenge durante esta sesión. Pendiente para la próxima corrida: reintentar desde la página 10 en adelante.
+- Cobertura acumulada del día para el pool de alquiler: páginas 1-9 (de un total de ~480 avisos). Quedan páginas 10+ sin revisar.
+
+## Candidatos nuevos encontrados (evaluados contra los 48 perfiles completos)
+
+1. **Big Pons** — Local en alquiler, Guido al 1900, Recoleta, Capital Federal. USD 4.000/mes. Desarrollado en 2 plantas: PB 140 m² + entrepiso 20 m² = 160 m² total. Cumple obligatorios: alquiler ✓, 140-220 m² cubiertos ✓ (160 m² dentro de rango), zona Recoleta ✓ (una de las 3 zonas del perfil). Publicado desde ayer.
+   Link: https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-recoleta-60151471.html
+
+2. **Hunterville** — Local comercial en alquiler, Av. Pedro Goyena 583, Caballito Sur, Caballito, Capital Federal. USD 4.300/mes. 110 m² de superficie total (85 m² de superficie construida/cubierta + patio). Zona Caballito ✓. m² BORDERLINE: el perfil pide 100-250 m² cubiertos (obligatorio) y la superficie cubierta declarada (85 m²) está por debajo del mínimo de 100 m², aunque la superficie total (110 m²) sí entraría en rango — se marca como candidato a revisar/confirmar m² real antes de contactar, no es un calce 100% limpio. Publicado desde ayer.
+   Link: https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-caballito-local-comercial-sobre-goyena-60149371.html
+
+3. **Osde Núñez** — Local comercial sin expensas en alquiler, Quesada 2678, Núñez, Capital Federal. $2.999.997/mes. 170 m² construidos, planta libre, cochera cubierta privada. Cumple obligatorios: alquiler ✓, 150-300 m² cubiertos ✓ (170 m² dentro de rango), zona Núñez ✓ (obligatoria). Publicado desde ayer.
+   Link: https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-alquiler-local-comercial-de-170-en-alquiler-en-nunez-60146082.html
+
+Ningún otro perfil de los 48 tuvo coincidencias en las páginas 5-9 (la gran mayoría de avisos son de m² fuera de rango para todos los perfiles activos, o de zonas no cubiertas por ningún perfil).
+
+## NOTA TÉCNICA — el sandbox de bash sigue caído (mismo bug del 8/09, Windows update)
+Se confirmó al intentar traer y editar "Locales Comerciales CABA.html": el entorno de shell falló con el mismo error de montaje de carpetas ya documentado ("Windows update del 8/9 impide que el workspace de Claude acceda a tus archivos"). Sin bash no hay forma segura de reconstruir el archivo de 700KB con el método de Grep+Python y editarlo sin arriesgar corromperlo. Seguí la instrucción explícita de esta corrida: NO se forzó nada arriesgado. Los 3 candidatos de arriba quedan documentados con su link real, PENDIENTES DE CARGA MANUAL o para la próxima corrida en que el sandbox de bash funcione. "Locales Comerciales CABA.html" NO fue tocado en esta corrida (se preservan íntegros los cambios que haya pusheado Parte 2 de hoy).
+
+## Resumen para Juan
+- Páginas cubiertas hoy en el pool de alquiler (esta corrida + Parte 1 normal): 1 a 9 de ~480. Páginas 10+ quedaron bloqueadas por un challenge de Cloudflare, pendientes de reintento.
+- 3 candidatos nuevos encontrados (Big Pons/Recoleta, Hunterville/Caballito Sur -borderline en m²-, Osde Núñez) — NO cargados al HTML por la caída persistente del sandbox de bash (mismo bug del 8/09), links reales arriba para carga manual o próxima corrida.
+- "Locales Comerciales CABA.html" no fue modificado esta corrida.
