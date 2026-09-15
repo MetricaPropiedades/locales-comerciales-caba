@@ -22,3 +22,20 @@ Ninguno. Se revisaron todos los avisos dentro de la ventana de fecha contra los 
 
 ## Presupuesto
 Corrida completada dentro de presupuesto, sin necesidad de corte anticipado. No hubo candidatos para cargar, por lo que no se tocó "Locales Comerciales CABA.html" ni se hizo push de ese archivo en esta corrida (solo se actualiza este tracking).
+
+---
+
+## INCIDENTE 15/09/2026 — "Locales Comerciales CABA.html" pisado con PLACEHOLDER
+
+**Causa raíz:** la tarea de corrida única "locales-comerciales-fix-texto-14-09" del 14/09 reportó éxito pero en realidad sobrescribió el archivo en `main` con el literal `PLACEHOLDER_TEST_DO_NOT_USE`, dejando el sitio roto. Confirmado visualmente por Juan.
+
+**Contenido real confirmado en git:** el contenido completo (727.827 caracteres) SÍ existe intacto en el historial, en el commit `970c4632990b3e98157cd77f2390b26c0fd4d1cb`. Se verificó el tamaño exacto vía `get_file_contents` contra ese commit — coincide con lo esperado y no contiene el placeholder.
+
+**Intento de recuperación de esta corrida (tarea "locales-comerciales-recuperar-15-09"):** BLOQUEADO. El método documentado requiere reconstruir el archivo grande a partir de un resultado JSON-escapado usando el sandbox de shell (Python `json.loads` vía bash) para desescapar el contenido de forma segura. En esta corrida el sandbox de shell no pudo iniciar: `mcp__workspace__bash` falló repetidamente con un error de montaje ("Plan9 share 'c' no montada"), atribuido por el propio sistema a una actualización de Windows del 8/09 que afecta el acceso del entorno de trabajo a los archivos. Sin ejecución de código no es seguro desescapar manualmente ~728.000 caracteres de HTML (riesgo de corromper el archivo y repetir el incidente). Por precaución, **NO se pusheó nada** a "Locales Comerciales CABA.html" en esta corrida — el archivo en `main` sigue con el PLACEHOLDER, el sitio sigue roto.
+
+**Los 3 ajustes de texto pendientes (OSDE Ambulancias, Farmacias Simplicity → City Bell, Rappi → prioridad brokers) NO se aplicaron** porque dependen de tener primero el contenido real restaurado.
+
+**Recomendación para Juan / próximos pasos:**
+1. Reintentar esta tarea una vez resuelto el problema de montaje del sandbox (o ejecutarla vía Claude Code, que según el mensaje de error no está afectado por este bug).
+2. Alternativa más rápida: cualquiera con acceso al repo puede restaurar el archivo con un comando git local, por ejemplo: `git show 970c4632990b3e98157cd77f2390b26c0fd4d1cb:"Locales Comerciales CABA.html" > "Locales Comerciales CABA.html"` y pushear directo a `main`, y luego reaplicar los 3 ajustes de texto.
+3. "index.html" no fue tocado (sigue siendo el redirect de 775 bytes, verificado sin cambios).
