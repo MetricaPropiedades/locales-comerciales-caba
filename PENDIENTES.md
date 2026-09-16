@@ -20,14 +20,35 @@
    - Nota: expensas bajas
    - Zona: Almagro — polígono entre Av. Rivadavia (3500-4500), Av. Medrano (0-1000), Av. La Plata (0-1000) y Av. Independencia (asumido 3500-4500 por ser paralela a Rivadavia, sin confirmar con Laura), + calles paralelas, aprox. 2-3 cuadras alrededor del perímetro. Prioridad: cerca de Rivadavia, Medrano y La Plata.
 
-## 3) Sabores Express — 2 pestañas nuevas (pendiente de datos, ver abajo)
+## 3) Sabores Express — SON DOS PESTAÑAS DISTINTAS, no confundir
 
-1. **Marca Nueva Sabores Express** — lista para cargar tal cual:
-   - Local comercial en alquiler, 160 a 250 m² (preferencia: 160 m² en PB)
-   - Zonas: Saavedra, Núñez, Belgrano, Caballito
+### 3.1) "Marca Nueva Sabores Express" — lista para cargar tal cual
+- Local comercial en alquiler, 160 a 250 m² (preferencia: 160 m² en PB)
+- Zonas: Saavedra, Núñez, Belgrano, Caballito
 
-2. **Sabores Express** — 15 ubicaciones tipo esquina, local comercial en alquiler, 35-60 m² (típico 45 m²). Es sobre la calle de la primera columna (no polígono), en un rango de 3 cuadras (300 números) que toquen/crucen con la calle de la segunda columna. Excluidas 2 filas marcadas "Firmado" en la foto de Juan; incluida la fila "Campana - Negociando".
-   - **Pendiente crítico**: de las 15 esquinas, solo se pudo confirmar 1 altura real por WebSearch (Alvear y Independencia, Villa Ballester → Alvear altura ~2800). Las otras 14 necesitan altura real de Google Maps o del broker — Juan todavía no decidió si las pide directo al broker o seguimos insistiendo con búsqueda web (que viene dando resultados poco confiables). **No cargar esta pestaña hasta tener las 15 alturas confirmadas.**
+### 3.2) "Sabores Express" — perfil de esquinas con altura, 35-60 m² (típico 45 m²)
+Local comercial en alquiler. Es sobre la calle de la PRIMERA columna (no polígono), en rango de 3 cuadras (300 números) que toquen/crucen con la calle de la SEGUNDA columna. Excluidas 2 filas marcadas "Firmado" en la foto de Juan; incluida la fila "Campana - Negociando".
+
+**Alturas confirmadas por Juan el 16/09 (14 ubicaciones):**
+
+| Calle (buscar local sobre esta) | Altura | Localidad |
+|---|---|---|
+| Av. Maipú | 1300-1700 | Florida |
+| Av. San Martín | 2100-2500 | Florida |
+| Roca | 500-900 | Vicente López |
+| Mitre | 3600-4000 | San Martín |
+| Alvear | 2600-2900 | Villa Ballester |
+| Altube | 1700-2100 | José C. Paz |
+| Av. Perón | 2900-3400 | Victoria |
+| Eva Perón | 500-900 | Derqui |
+| Rivadavia | 500-900 | Pilar |
+| Vélez Sarsfield | 4500-5000 | Munro |
+| Independencia | 2700-3000 | Carapachay |
+| Juan B. Justo | 0-200 | Beccar |
+| Ayacucho | 0-100 | Beccar |
+| Laprida | 4000-4400 | Villa Martelli |
+
+**Pendiente a confirmar con Juan**: la tanda original eran 15 esquinas (menos 2 "Firmado"), estas son 14 filas — falta chequear si falta 1 esquina más o si el conteo ya cierra así. No cargar la pestaña hasta confirmar esto.
 
 ## 4) Retención de contenido — purga pendiente
 
