@@ -26,10 +26,8 @@
 - Local comercial en alquiler, 160 a 250 m² (preferencia: 160 m² en PB)
 - Zonas: Saavedra, Núñez, Belgrano, Caballito
 
-### 3.2) "Sabores Express" — perfil de esquinas con altura, 35-60 m² (típico 45 m²)
-Local comercial en alquiler. Es sobre la calle de la PRIMERA columna (no polígono), en rango de 3 cuadras (300 números) que toquen/crucen con la calle de la SEGUNDA columna. Excluidas 2 filas marcadas "Firmado" en la foto de Juan; incluida la fila "Campana - Negociando".
-
-**Alturas confirmadas por Juan el 16/09 (14 ubicaciones):**
+### 3.2) "Sabores Express" — perfil de esquinas con altura, 35-60 m² (típico 45 m²) — LISTA COMPLETA, CONFIRMADA POR JUAN, LISTA PARA CARGAR
+Local comercial en alquiler. Es sobre la calle de la PRIMERA columna (no polígono), en rango de 3 cuadras (300 números) que toquen/crucen con la calle de la SEGUNDA columna. Excluidas 2 filas marcadas "Firmado" en la foto de Juan; incluida la fila "Campana - Negociando". Total: 14 esquinas (confirmado por Juan el 16/09, no falta ninguna).
 
 | Calle (buscar local sobre esta) | Altura | Localidad |
 |---|---|---|
@@ -47,8 +45,6 @@ Local comercial en alquiler. Es sobre la calle de la PRIMERA columna (no polígo
 | Juan B. Justo | 0-200 | Beccar |
 | Ayacucho | 0-100 | Beccar |
 | Laprida | 4000-4400 | Villa Martelli |
-
-**Pendiente a confirmar con Juan**: la tanda original eran 15 esquinas (menos 2 "Firmado"), estas son 14 filas — falta chequear si falta 1 esquina más o si el conteo ya cierra así. No cargar la pestaña hasta confirmar esto.
 
 ## 4) Retención de contenido — purga pendiente
 
