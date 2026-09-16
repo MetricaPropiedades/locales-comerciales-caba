@@ -1,0 +1,1 @@
+Prueba de ejecucion remota sin computadora encendida. Timestamp: 2026-09-16T00:00:00Z (hora aproximada de esta corrida). Si Juan ve este archivo en GitHub y su computadora estaba apagada, la ejecucion remota SI funciona.
