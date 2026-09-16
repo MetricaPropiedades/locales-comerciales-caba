@@ -8,7 +8,7 @@
 2. **Pestaña OSDE Ambulancias**: en la preferencia, cambiar "4 espacios de ambulancia" por "8 cocheras". (Nota: el criterio completo ya está actualizado en el SKILL.md de la tarea diaria desde el 14/09 — esto es solo el texto visible en la tarjeta/pestaña del HTML, que todavía no se actualizó).
 3. **Pestaña Farmacias Simplicity**: falta agregar "City Bell" y "Av. 8/12 de La Plata" como zonas — confirmado que hoy no figuran.
 
-## 2) Pestañas nuevas / renombres pendientes (3)
+## 2) Pestañas nuevas / renombres pendientes (4)
 
 1. **Rename**: la pestaña "Valeria" → el cliente real se llama **"Romina"**. Cambiar el nombre visible, no el criterio de búsqueda.
 2. **Nueva pestaña — Hazrat Namasté India (Restaurante)**:
@@ -19,6 +19,22 @@
    - Departamento en venta, 3 o 4 ambientes, sin cochera, con balcón, sin amenities
    - Nota: expensas bajas
    - Zona: Almagro — polígono entre Av. Rivadavia (3500-4500), Av. Medrano (0-1000), Av. La Plata (0-1000) y Av. Independencia (asumido 3500-4500 por ser paralela a Rivadavia, sin confirmar con Laura), + calles paralelas, aprox. 2-3 cuadras alrededor del perímetro. Prioridad: cerca de Rivadavia, Medrano y La Plata.
+4. **Nueva pestaña — Hamburguesas Extremas** (perfil de esquinas con altura, igual método que Sabores Express):
+   - Local comercial en alquiler, 100 a 150 m²
+   - Sobre la calle de la PRIMERA columna, en rango de 3 cuadras que toquen/crucen con la SEGUNDA columna (misma lógica que Sabores Express) — CONFIRMAR con Juan si aplica el mismo criterio de "3 cuadras rectas, no polígono" antes de cargar, dado que no lo aclaró explícitamente para este cliente.
+   - **Alturas confirmadas por Juan el 16/09 (9 esquinas):**
+
+   | Calle (buscar local sobre esta) | Altura | Localidad |
+   |---|---|---|
+   | Alvear | 0-200 | Martínez |
+   | Yrigoyen | 0-200 | Martínez |
+   | Av. Cazón | 1300-1600 | Tigre |
+   | Yrigoyen | 1700-2100 | José C. Paz |
+   | Av. Constitución | 0-200 | Savio |
+   | Av. Alvear | 2700-3100 | Benavídez |
+   | Av. Villanueva | 1400-1700 | Maschwitz |
+   | Av. Ing. Agustín Roca | 0-300 | Campana |
+   | Av. Ing. Eduardo Madero | 1200-1600 | Del Viso |
 
 ## 3) Sabores Express — SON DOS PESTAÑAS DISTINTAS, no confundir
 
