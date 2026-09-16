@@ -19,9 +19,10 @@
    - Departamento en venta, 3 o 4 ambientes, sin cochera, con balcón, sin amenities
    - Nota: expensas bajas
    - Zona: Almagro — polígono entre Av. Rivadavia (3500-4500), Av. Medrano (0-1000), Av. La Plata (0-1000) y Av. Independencia (asumido 3500-4500 por ser paralela a Rivadavia, sin confirmar con Laura), + calles paralelas, aprox. 2-3 cuadras alrededor del perímetro. Prioridad: cerca de Rivadavia, Medrano y La Plata.
-4. **Nueva pestaña — Hamburguesas Extremas** (perfil de esquinas con altura, igual método que Sabores Express):
+4. **Nueva pestaña — Hamburguesas Extremas** — LISTA COMPLETA, CONFIRMADA POR JUAN, LISTA PARA CARGAR:
    - Local comercial en alquiler, 100 a 150 m²
-   - Sobre la calle de la PRIMERA columna, en rango de 3 cuadras que toquen/crucen con la SEGUNDA columna (misma lógica que Sabores Express) — CONFIRMAR con Juan si aplica el mismo criterio de "3 cuadras rectas, no polígono" antes de cargar, dado que no lo aclaró explícitamente para este cliente.
+   - Mismo criterio que Sabores Express: sobre la calle de la PRIMERA columna, NO es polígono, son cuadras rectas sobre esa calle cruzando/tocando la calle de la SEGUNDA columna. Juan aclaró (16/09): en general son 4 cuadras, pero varía según la esquina — usar el rango de altura exacto de la tabla de abajo en cada caso, no asumir siempre 3 o 4 cuadras parejas.
+   - Guardar esta lista completa en la pestaña (visible) y en el SKILL.md de la tarea de búsqueda, para que la skill compare cada aviso contra estas calles+alturas y sume el candidato si coincide.
    - **Alturas confirmadas por Juan el 16/09 (9 esquinas):**
 
    | Calle (buscar local sobre esta) | Altura | Localidad |
