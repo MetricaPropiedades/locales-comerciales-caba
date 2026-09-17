@@ -6,16 +6,15 @@
 
 Se corrigió el SKILL.md de `locales-comerciales-caba-diario`: antes intentaba traer/reconstruir el HTML de 700KB AL PRINCIPIO de la sesión, y al fallar el sandbox gastaba casi todo el presupuesto en reintentos, dejando muy poco para buscar. Ahora el orden es: buscar TODO primero (no depende del sandbox), y recién al final intentar tocar el HTML. Esto no vuelve a pasar de nuevo.
 
-## 1) Ediciones de texto pendientes (3)
+## 1) Ediciones de texto pendientes — APLICADAS el 17/09 (Parte 1, corrida de fin de semana)
 
-1. **Pestaña Rappi**: agregar nota de que la prioridad es para brokers (nota de brokers, ver pedido original de Juan).
-2. **Pestaña OSDE Ambulancias**: en la preferencia, cambiar "4 espacios de ambulancia" por "8 cocheras". (Nota: el criterio completo ya está actualizado en el SKILL.md de la tarea diaria desde el 14/09 — esto es solo el texto visible en la tarjeta/pestaña del HTML, que todavía no se actualizó).
-3. **Pestaña Farmacias Simplicity**: falta agregar "City Bell" y "Av. 8/12 de La Plata" como zonas — confirmado que hoy no figuran.
+Las 3 ediciones de texto (nota de brokers en Rappi, "8 cocheras" en OSDE Ambulancias, City Bell + Av. 8/12 en Simplicity) y el rename Valeria→Romina se aplicaron hoy directo sobre "Locales Comerciales CABA.html" con Edit + verificación de balance de divs. Ya no están pendientes.
 
-## 2) Pestañas nuevas / renombres pendientes (4)
+## 2) Pestañas nuevas pendientes (3) — sin crear todavía
 
-1. **Rename**: la pestaña "Valeria" → el cliente real se llama **"Romina"**. Cambiar el nombre visible, no el criterio de búsqueda.
-2. **Nueva pestaña — Hazrat Namasté India (Restaurante)**:
+Nota (17/09): no se crearon esta corrida por ser cirugía estructural más grande (botón + tab-panel + bloque filters) sobre un HTML de 700KB+, mientras esta misma corrida ya estaba cargando ~180 tarjetas nuevas en 27 pestañas existentes — se prefirió no combinar ambos riesgos en una sola sesión desatendida. Quedan listas para crear en una corrida dedicada.
+
+1. **Nueva pestaña — Hazrat Namasté India (Restaurante)**:
    - Local comercial en alquiler
    - 120 a 200 m² en planta baja
    - Zona: Calle Defensa (CABA), entre altura 800 y 1200
@@ -74,12 +73,7 @@ Local comercial en alquiler. Es sobre la calle de la PRIMERA columna (no polígo
 
 ## 5) Candidatos sin cargar al HTML (con link real, listos para pegar)
 
-### Del 15/09 — Parte 1 (alquiler, locales comerciales) — 5
-1. Big Pons — Guido al 1900, Recoleta — USD 4.000/mes, 160 m² — https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-recoleta-60151471.html
-2. Big Pons — Av. Córdoba al 2400, Recoleta — $6.000.000/mes, 160 m² — https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-av-cordoba-60143338.html
-3. Big Pons — Av. Callao al 2000, Recoleta — USD 5.500/mes, 160 m² — https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-recoleta-60142984.html
-4. Hunterville — Av. Pedro Goyena 583, Caballito — USD 4.300/mes, 110 m² (revisar m² cubierto, está en el límite) — https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-caballito-local-comercial-sobre-goyena-60149371.html
-5. Osde Núñez — Quesada 2678, Núñez — $2.999.997/mes, 170 m² — https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-alquiler-local-comercial-de-170-en-alquiler-en-nunez-60146082.html
+### Del 15/09 — Parte 1 (alquiler, locales comerciales) — APLICADOS el 17/09 (Big Pons x3, Hunterville, Osde Núñez)
 
 ### Del 15/09 — Valeria / Romina (compra depto 2 amb, Palermo, hasta USD 150.000) — 13
 6. Guatemala al 4200 — USD 89.900 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-depto-2-amb-en-palermo-60156280.html
@@ -96,9 +90,7 @@ Local comercial en alquiler. Es sobre la calle de la PRIMERA columna (no polígo
 17. Thames al 1800 — USD 112.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-depto-2-amb-en-palermo-soho-apto-credito-60155916.html
 18. San Luis 3417 — USD 55.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-buen-2-amb-m-buen-estado-piso-3-muy-luminoso-bano-y-60157346.html
 
-### Del 16/09 — Parte 1 (alquiler) — 2
-19. Freddo — Av. Entre Ríos al 1700, Parque Patricios — $1.000.000/mes, 100 m² — https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-alquiler-av-entre-rios-1700-100-m-sup2-60167709.html
-20. Thermomix — Frías al 500, Villa Crespo — $3.000.000/mes + $316.328 expensas, 140 m² — https://www.zonaprop.com.ar/propiedades/clasificado/alcllcin-local-en-villa-crespo-60166324.html
+### Del 16/09 — Parte 1 (alquiler) — ya estaban cubiertos por la búsqueda del 17/09 (mismos ID de aviso 60167709 y 60166324 salieron de nuevo en el pool de hoy y se cargaron con insert-cards.js, que dedupea por ID)
 
 ### Del 16/09 — Parte 1.5 (depósitos/galpones) — 1
 21. Rappi — Hipólito Yrigoyen al 2600, San Fernando — USD 3.000+iva, 491 m² — https://www.zonaprop.com.ar/propiedades/clasificado/alcldein-deposito-en-alquiler-en-san-fernando-calle-hipolito-60159744.html
