@@ -71,58 +71,7 @@ Local comercial en alquiler. Es sobre la calle de la PRIMERA columna (no polígo
 - Política definitiva: **15 días de retención** (se descartaron 7 y 30 días).
 - Hay contenido viejo sin purgar desde el 24 de julio en adelante. Cuando ande el sandbox: borrar todas las day-sections de todas las pestañas con fecha anterior a 15 días desde hoy.
 
-## 5) Candidatos sin cargar al HTML (con link real, listos para pegar)
-
-### Del 15/09 — Parte 1 (alquiler, locales comerciales) — APLICADOS el 17/09 (Big Pons x3, Hunterville, Osde Núñez)
-
-### Del 15/09 — Valeria / Romina (compra depto 2 amb, Palermo, hasta USD 150.000) — 13
-6. Guatemala al 4200 — USD 89.900 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-depto-2-amb-en-palermo-60156280.html
-7. Gorriti 3638 — USD 140.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-2-ambientes-amoblado-con-balcon-y-pileta-60156832.html
-8. Borges al 2200 — USD 135.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-2-amb-oportunidad-unica-palermo-60157890.html
-9. Medrano 1046 — USD 130.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-de-36-m-sup2--con-1-dormitorio-en-venta-59994424.html
-10. Beruti al 4500 — USD 110.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-de-departamento-dos-ambientes-en-palermo-chico-60153920.html
-11. Beruti al 4500 (otro) — USD 119.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-oportunidad-departamento-apto-profesional-y-60154099.html
-12. Av. Cerviño 3900 — USD 120.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-dpto-2-amb-en-palermo-boulevard-cervin0-60155904.html
-13. Cabello al 3700 — USD 129.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-palermo-chico-60157904.html
-14. Luis María Campos 735 — USD 99.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-2-ambientes-en-las-canitas-60157586.html
-15. Thames 2100 — USD 85.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-2-amb-palermo-60154196.html
-16. Thames 2100 (otro) — USD 145.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-dos-ambientes-palermo-soho-60154707.html
-17. Thames al 1800 — USD 112.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-depto-2-amb-en-palermo-soho-apto-credito-60155916.html
-18. San Luis 3417 — USD 55.000 — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-buen-2-amb-m-buen-estado-piso-3-muy-luminoso-bano-y-60157346.html
-
-### Del 16/09 — Parte 1 (alquiler) — ya estaban cubiertos por la búsqueda del 17/09 (mismos ID de aviso 60167709 y 60166324 salieron de nuevo en el pool de hoy y se cargaron con insert-cards.js, que dedupea por ID)
-
-### Del 16/09 — Parte 1.5 (depósitos/galpones) — 1
-21. Rappi — Hipólito Yrigoyen al 2600, San Fernando — USD 3.000+iva, 491 m² — https://www.zonaprop.com.ar/propiedades/clasificado/alcldein-deposito-en-alquiler-en-san-fernando-calle-hipolito-60159744.html
-
-### Del 16/09 — Parte 2 (recuperados del chat, nunca se habían guardado en tracking)
-
-**Pool venta locales comerciales (AMBA):**
-22. Callao Av. 1000, Recoleta — USD 590.000, 270m², esquina Callao y Santa Fe — https://www.zonaprop.com.ar/propiedades/clasificado/vecllcin-local-comercial-en-la-mejor-arteria-de-caba-callao-y-60168061.html
-
-**Fliping (depto 2-3amb a reformar, venta):**
-23. Humboldt 2260, Palermo Hollywood — USD 135.000, 62m², cochera, "a reciclar" — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-palermo-3-ambientes-con-cochera-60167634.html
-24. Av. Olazábal 5000, Villa Urquiza — USD 200.000, 173m², "a remodelar" — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-3-amb-patio-quincho-parrilla-a-remodelar-60161830.html
-25. Libertad 1000, Recoleta — USD 229.000, 121m², "para reciclar" — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-tres-ambientes-en-edificio-de-categoria.-contrafrente-60155110.html
-26. Montevideo 1500, Recoleta — USD 290.000, 84m², "para refaccionar" — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-recoleta-60153664.html
-27. República de la India 2800, Palermo — USD 95.000, 40m², "a refaccionar" (también cuenta para Valeria) — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-2-ambientes-en-palermo-chico-60167774.html
-28. Ayacucho 1400, Recoleta — USD 86.000, 35m², "para refaccionar" — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-recoleta-2-amb-al-frente-con-balcon-60164383.html
-
-**Compra Dpto Caballito Sur:**
-29. Aranguren 55 — USD 159.000, 61m², 15 años, cochera, balcón, lavadero — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-3-ambientes-en-caballito-con-balcon-60167155.html
-30. Av. J.B. Alberdi 500 — USD 199.000, 77m², 18 años, cochera cubierta, balcón, lavadero — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-3amb-con-cochera-en-caballito-con-amenities-60160512.html
-
-**Valeria / Romina (más candidatos, sumar a los del 15/09 de arriba):**
-31. República de la India 2800 — USD 95.000, 40m² (mismo que Fliping #27)
-32. Maure 1600, Las Cañitas — USD 135.000, 66m² — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-excelente-2-ambientes-con-patio.-apto-profesional-60167370.html
-33. Bulnes 2000, Palermo — USD 98.000, 43m² — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-dos-ambientes-con-patio-alto-60168167.html
-34. Darregueyra 2100, Palermo Soho — USD 145.000, 44m² — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-2-ambientes-apto-profesional-luminoso-60168069.html
-35. Lavalle 4078, Palermo — USD 131.250, 52m² — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-departamento-en-palermo-60165959.html
-36. Paraguay 4237, Palermo Soho — USD 70.000, 34m² — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-palermo-2-ambientes-lateral.-muy-luminoso.-excelente-60168744.html
-37. Córdoba 3533, Palermo — USD 75.000, 34m² — https://www.zonaprop.com.ar/propiedades/clasificado/veclapin-venta-departamento-2-ambientes-abasto-60166314.html
-
-**Padel PRO (terreno Malvinas Argentinas / zona ampliada):**
-38. Misiones 300, Tortuguitas — USD 280.000, 3547m² — https://www.zonaprop.com.ar/propiedades/clasificado/vecltrin-lote-3547-m-sup2--tortuguitaszon.-r2-2660-m-sup2-60162362.html
+## 5) Candidatos sin cargar al HTML — TODOS APLICADOS el 17/09 (corrida unificada Claude Code, insert-cards.js con dedup por ID)
 
 (Sergio y Terrenos dieron 0 candidatos reales el 16/09, revisado a fondo.)
 

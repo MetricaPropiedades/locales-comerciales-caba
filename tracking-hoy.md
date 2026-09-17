@@ -1,31 +1,54 @@
-# Tracking diario -- Parte 1 (alquiler, pool nacional de locales comerciales)
+# Tracking diario -- Corrida unificada (Parte 1 + 1.5 + 2)
 
-## Miércoles 17 de septiembre de 2026 (corrida de fin de semana, desatendida, vía Claude Code / adaptación local con git+node)
+## Jueves 17 de septiembre de 2026 (corrida desatendida vía Claude Code, adaptación local con git+node, ver `legacy-tareas/ADAPTACION-CLAUDE-CODE.md`)
 
-### Pool cubierto
-- URL: `https://www.zonaprop.com.ar/locales-comerciales-alquiler-publicado-hace-menos-de-2-dias-orden-publicado-descendente.html` (`--max-days 1`, excluye avisos ya cargados en el HTML).
-- RESUMEN del script (`zp-extract.js`): `páginas=9 avisos_vistos=243 devueltos=243 ya_cargados_excluidos=sí corte="última página"`. Un solo HTTP 522 transitorio en la página 2, resuelto con el reintento automático del script. No hizo falta dividir por zona (no se llegó al límite de 9 páginas con bloqueo 403).
-- Cobertura: 100% del pool de alquiler nacional dentro de la ventana "hoy + ayer".
+### PARTE 1 -- Alquiler nacional de locales comerciales
+Pool base: `locales-comerciales-alquiler-publicado-hace-menos-de-2-dias-orden-publicado-descendente.html` (`--max-days 1`).
+- RESUMEN nacional: `páginas=9 avisos_vistos=270 devueltos=203 corte="HTTP 403 en pág 10 tras reintentos"` (total real del pool: 307 avisos; ZonaProp bloquea páginas 10+ fuera de navegador).
+- Para cubrir el resto se dividió por zona (según indica el script):
+  - capital-federal: `páginas=4 avisos_vistos=108 devueltos=54 corte="última página"`
+  - gba-norte: `páginas=2 avisos_vistos=39 devueltos=30 corte="última página"`
+  - gba-sur: `páginas=2 avisos_vistos=39 devueltos=35 corte="última página"`
+  - gba-oeste: `páginas=1 avisos_vistos=19 devueltos=17 corte="última página"`
+  - cordoba: `páginas=1 avisos_vistos=24 devueltos=23 corte="última página"`
+  - santa-fe: `páginas=1 avisos_vistos=19 devueltos=18 corte="última página"`
+  - buenos-aires-costa-atlantica: `páginas=1 avisos_vistos=23 devueltos=18 corte="última página"`
+- Cobertura por zonas: ~271 de 307 avisos vistos (~88%); el resto (~36) corresponde a provincias chicas no desagregadas (Mendoza, Entre Ríos, etc., cada una con pocos avisos). No se dividió más por presupuesto de tiempo.
+- Todos los pools (nacional + zonas) se dedupearon por ID de aviso antes de filtrar.
+
+### PARTE 1.5 -- Depósitos y galpones
+- Depósitos: `https://www.zonaprop.com.ar/depositos-alquiler-publicado-hace-menos-de-2-dias-orden-publicado-descendente.html` → `páginas=2 avisos_vistos=54 devueltos=54 corte="última página"`.
+- Galpones: confirmado (de nuevo) que la categoría separada NO existe -- la URL devuelve 404 y redirige a `handleUrlNotRecognize`. Los galpones están mezclados dentro del pool de Depósitos, como ya estaba documentado.
+
+### PARTE 2 -- Venta de locales, Fliping, Sergio, Caballito Sur, Romina/Valeria, Terrenos, Padel PRO
+- Venta locales comerciales (nacional): `locales-comerciales-venta-publicado-hace-menos-de-2-dias-orden-publicado-descendente.html` → `páginas=8 avisos_vistos=220 devueltos=218 corte="última página"` (no llegó al límite de 9 páginas, cobertura 100%).
+- Departamentos venta, 8 barrios (Saavedra, Núñez, Belgrano, Villa Crespo, Villa Urquiza, Palermo, Recoleta, Barrio Norte), 2 ambientes (Fliping + Romina/Valeria): `páginas=7 avisos_vistos=205 devueltos=200 corte="última página"`.
+- Mismos 8 barrios, 3 ambientes (Fliping + Sergio): `páginas=7 avisos_vistos=205 devueltos=199 corte="última página"`.
+- Caballito, 3 ambientes (Caballito Sur): `páginas=2 avisos_vistos=39 devueltos=39 corte="última página"`.
+- Palermo, 4 ambientes (Sergio): `páginas=2 avisos_vistos=44 devueltos=43 corte="última página"`.
+- Terrenos, mismos 8 barrios (Terrenos): `páginas=1 avisos_vistos=15 devueltos=15 corte="última página"`.
+- Terrenos Malvinas Argentinas (Padel PRO): `páginas=1 avisos_vistos=5 devueltos=5 corte="última página"` (con filtro de fecha agregado; la URL fija original del perfil no trae orden por fecha y daba 0 en la ventana hoy+ayer).
 
 ### Método de evaluación
-Los 243 avisos se filtraron con un script Node contra los ~40 perfiles de alquiler que cubre esta Parte 1 (zona, m² cubiertos, tope de precio cuando aplica, y verificación de esquina/planta baja/palabra clave vía regex sobre título+dirección+descripción completa). Se corrigieron manualmente colisiones de nombre de zona con otra provincia/ciudad homónima (San Martín→Mendoza, San Justo/Avellaneda→Santa Fe, Bella Vista→Corrientes, Neuquén capital vs. San Martín de los Andes, Santa Fe capital vs. Rosario/Rafaela) exigiendo coincidencia exacta de componente de ciudad+provincia en vez de substring. Los 99 avisos únicos sobrevivientes se revisaron uno por uno (dirección, m², precio, esquina/PB/palabras clave, cocheras) antes de cargar.
+Todos los pools (locales alquiler+venta deduplicados = 442 avisos únicos, depósitos = 54, deptos 2amb = 200, deptos 3amb = 199, Palermo 4amb = 43, Caballito 3amb = 39, terrenos = 15, Padel PRO = 5) se filtraron con un script Node contra los 48 perfiles de la Parte 1 + los perfiles de depósito/galpón de la Parte 1.5 + Fliping/Sergio/Caballito Sur/Romina/Terrenos/Padel PRO de la Parte 2, usando zona (con corrección de colisión de nombre de provincia: San Martín→Mendoza, San Justo/Avellaneda→Santa Fe, Bella Vista→Corrientes, Microcentro→Chaco, y exclusión de La Plata/Brandsen/Costa Atlántica del criterio estricto "AMBA"), m² cubiertos/totales, presupuesto (equivalencia USD/ARS ~$1.550), esquina/planta baja/palabras clave por regex sobre título+dirección+descripción completa, altura sobre calle para los perfiles de calles puntuales o polígono (Open Pharma, Sergio, Pet Shop Jardín Botánico), cocheras, ambientes y antigüedad para los perfiles residenciales. Los sobrevivientes se revisaron a mano (dirección, m², precio, esquina/PB/palabras clave) antes de cargar.
 
-### Candidatos nuevos cargados hoy (221 tarjetas en 28 pestañas)
-- AMBA: 10 · Interior del País: 1 · AMBA +800m²: 5 (se excluyó 1 aviso con m² mal parseado por el sitio, ver nota) · Freddo: 3 · Taller Chapa y Pintura: 4 · Bostani Coffee: 23 · Carrefour: 6 · Havanna: 9 · Rappi (local): 1 · Big Pons: 1+3 (pendientes del 15/09) · Hunterville: 2+1 (íd.) · Osde Núñez: 1+1 (íd.) · Café Martínez: 1 · Tostado Café Club: 1 · Pizzería La Guitarrita: 13 · Thermomix: 2 · Concesionaria Chery: 1 · MultiBazar/City Moda: 13 · Smartfit/On Fit Gym: 1 · Farmacias Simplicity: 5 · Adidas: 39 · Pedidos Ya 2026 (local): 1 · Adidas Factory: 5 · Tostado Fast Casual: 13 · Tostado Flagship: 27 · Chango Mas: 24 · Julián Ciprés: 2 · OSDE Ambulancias (local): 2.
-- Perfiles con volumen alto (Adidas, Chango Mas, Tostado Flagship, Bostani, Pizzería La Guitarrita, MultiBazar, Tostado Fast Casual) tienen zonas obligatorias muy amplias (CABA/AMBA completo) y poco filtro adicional, por lo que un pool nacional grande produce naturalmente muchos candidatos — no es un error del filtro.
-- Sin novedades hoy: Puppis, Nikki, Havaiana, KFC, Osde Flores, Open Pharma, Cetrogar, Bazar Freddy, Fundación ICBC, OSDE Lanús Oeste, OSDE San Martín y Barracas, Tostado Casual to go (pausado, no se buscó).
+### Candidatos nuevos cargados hoy (162 tarjetas en 28 pestañas)
+De la búsqueda de hoy (141): Adidas 10 · Bostani Coffee 14 · Romina 22 · Fliping 15 · AMBA +800m² 11 · Farmacias Simplicity 11 · AMBA 8 · Interior del País 5 · Tostado Fast Casual 5 · Chango Mas 5 · Havanna 4 · Pedidos Ya 2026 3 · Tostado Café Club 3 · Tostado Flagship 3 · Taller Chapa y Pintura 3 · Compra Dpto Caballito Sur 3 · Thermomix 2 · Cetrogar 2 · Pizzería La Guitarrita 2 · Smartfit/On Fit Gym 2 · OSDE Ambulancias 2 · Concesionaria Chery 1 · Freddo 1 · Carrefour 1 · MultiBazar/City Moda 1 · Rappi 1 · Agustín Ali 1.
+De PENDIENTES.md (backlog 15-16/09, aplicado hoy, 21 nuevas tras dedup): Romina 14 · Fliping 3 · Compra Dpto Caballito Sur 1 · Rappi 1 · AMBA 1 · Padel PRO 1. (El resto del backlog ya había sido encontrado también por la búsqueda de hoy -- deduplicado automáticamente por `insert-cards.js`.)
+Sin novedades hoy: KFC, Osde Núñez, Osde Nordelta/Belgrano, Osde Flores, Open Pharma, Osde Olivos, Puppis, Nikki, Havaiana, Café Martínez, Big Pons, Hunterville, Pet Shop-Natural Life, Fundación ICBC, OSDE Lanús Oeste, Bazar Freddy, OSDE San Martín/Barracas, Adidas Factory, Julián Ciprés, Sergio, Terrenos (0 candidatos reales tras revisión completa).
 
-### Descartes obligatorios relevantes (no se cargaron)
-- **Carrefour**: se excluyeron 6 avisos que sí cumplían m²/precio pero cuya dirección está a ~4-5 cuadras o menos de una sucursal Carrefour existente (según `referencias/carrefour-sucursales-caba.txt`) o con precio/PB ambiguos: Hipólito Yrigoyen 500 y Florida 300 (Microcentro, USD 15.000 supera el tope), Costa Rica 5100 y El Salvador s/n (PB no confirmado), Av. Cabildo 1932 (≈5 cuadras de la sucursal Cabildo 2441), Av. del Libertador 6802 (precio no informado).
-- **OSDE Ambulancias (sub-caso local)**: de 19 avisos que cumplían zona + mínimo 200 m², solo 2 confirmaban explícitamente el mínimo de 8 cocheras (obligatorio); los otros 17 no lo mencionaban y se excluyeron por ambigüedad de un criterio obligatorio (regla del proyecto: ante duda en un obligatorio, no cargar).
-- Un aviso en Microcentro (id 60169942) traía un m² total mal parseado por el sitio (18.200 en vez de 182 reales, según la propia descripción) — se excluyó de "AMBA +800m²" y "Adidas Factory" (no llega al mínimo real) pero se mantuvo en Tostado Flagship y Chango Mas (182 m² sí califica ahí).
+### Descartes / notas de verificación manual pendiente
+- **Carrefour** (1 candidato, Av. Eslovenia 1987/Las Cañitas): no hay sucursal Carrefour listada en Las Cañitas ni sobre Scalabrini Ortiz/Cabildo a menos de 4 cuadras según `referencias/carrefour-sucursales-caba.txt` -- cargado, pero recomendable confirmar a mano.
+- **Havanna** (4 candidatos): no existe archivo de referencia de sucursales Havanna en el repo (pendiente #6 de PENDIENTES.md) -- se cargaron igual, sin poder verificar automáticamente la regla de "mínimo 8 cuadras de otra sucursal".
+- **KFC y OSDE Lanús Oeste**: 0 candidatos hoy que superen el filtro automático de calle+altura/polígono.
+- **OSDE Ambulancias**: los 2 candidatos cargados son del sub-caso depósito/galpón (300m²+, cocheras sin confirmar, preferencia no excluyente) -- no se encontró ningún local comercial con las 8 cocheras obligatorias confirmadas en el texto.
+- Se corrigió durante el filtro un falso positivo sistemático: la keyword "peatonal" venía matcheando frases como "tránsito vehicular y peatonal" (no calles peatonales reales) para el criterio "esquina obligatoria salvo peatonales" de Interior del País -- se ajustó a exigir la frase "calle/paseo/zona peatonal".
+- Se excluyó 1 candidato de Terrenos con precio "USD 1" (dato mal parseado del sitio, no confiable).
 
 ### PENDIENTES.md aplicado hoy
-- 3 ediciones de texto (nota de brokers en Rappi + 15 zonas actualizadas, "8 cocheras" + split local/depósito en OSDE Ambulancias, City Bell + Av. 8/12 en Farmacias Simplicity) y el rename de pestaña Valeria → Romina, aplicados directo sobre el HTML con Edit (balance de divs verificado: 8882/8882 antes y después).
-- 5 candidatos sueltos del 15/09 (Big Pons x3, Hunterville, Osde Núñez) cargados con `insert-cards.js`.
-- 2 candidatos del 16/09 (Freddo, Thermomix) resultaron ser los mismos ID de aviso que ya trajo el pool de hoy — no se duplicaron.
-- Se dejaron pendientes (sin evaluar con rigor suficiente esta corrida) los 3 perfiles nuevos sin pestaña propia (Hazrat Namasté India, Laura Flores, Hamburguesas Extremas) y las 2 pestañas de Sabores Express: requieren lógica de calle+altura exacta por esquina que el filtro grueso de hoy no puede verificar de forma confiable (solo hace coincidencia de nombre de calle, no de rango de altura), así que no se cargó nada especulativo ahí. Quedan para una corrida dedicada a crear esas pestañas.
-- Bug encontrado y corregido en `insert-cards.js`: no detectaba la pestaña activa por defecto (`class="tab-panel active"` en vez de `class="tab-panel"`), lo que hacía fallar silenciosamente la carga en la pestaña AMBA. Corregido para tolerar clases extra en el div.
+- Sección 5 completa (38 candidatos sueltos con link real de días previos, 15-16/09): aplicados con `insert-cards.js` sobre el HTML de hoy; 17 ya habían sido encontrados de nuevo por la búsqueda de hoy y se dedupearon automáticamente por ID, 21 eran genuinamente nuevos y se cargaron. Sección borrada del archivo.
+- Quedan pendientes (sin tocar esta corrida, decisión conservadora -- requieren cirugía estructural de HTML: botón de menú + tab-panel + bloque filters nuevos, no combinable con una corrida de búsqueda desatendida): 3 pestañas nuevas (Hazrat Namasté India, Laura Flores, Hamburguesas Extremas) y las 2 sub-pestañas de Sabores Express (Marca Nueva + calles/alturas). Ver `docs/cambios-clientes-17-09.md` para el detalle completo ya confirmado por Juan.
+- Retención de 15 días (purga de contenido viejo desde 24/07): sigue pendiente, requiere script dedicado de parseo de fechas en español -- no se hizo esta corrida por alcance/tiempo.
 
 ### Publicación
-Un solo commit + push al final de la corrida (ver hash en el resumen de la sesión).
+Un solo commit + push al final de la corrida (adaptación local con git, ver `legacy-tareas/ADAPTACION-CLAUDE-CODE.md`). Hash del commit en el resumen final de la sesión.
