@@ -1,6 +1,6 @@
 # PENDIENTES para aplicar en "Locales Comerciales CABA.html"
 
-Última actualización: 18/09/2026 (revisado en la corrida diaria: nada pendiente).
+Última actualización: 19/09/2026 (revisado en la corrida diaria: nada pendiente).
 
 ## TODO APLICADO (17/09)
 No queda nada pendiente. Se aplicaron: las 3 ediciones de texto (nota de brokers en Rappi, "8 cocheras" en OSDE Ambulancias, City Bell + Av. 8/12 de La Plata en Farmacias Simplicity), el rename Valeria -> Romina, y las 5 pestañas nuevas (Hazrat Namasté India, Marca Nueva Sabores Express, Sabores Express, Hamburguesas Extremas, Laura Flores).
