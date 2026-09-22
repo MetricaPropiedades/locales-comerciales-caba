@@ -289,6 +289,7 @@ max-height: none;
 <div class="sidebar-group-title">Salud y Farmacias</div>
 <button class="tab-btn sidebar-btn" id="btn-openpharma" onclick="showTab('openpharma')">Open Pharma</button>
 <button class="tab-btn sidebar-btn" id="btn-simplicity" onclick="showTab('simplicity')">Farmacias Simplicity</button>
+<button class="tab-btn sidebar-btn" id="btn-farmatodo" onclick="showTab('farmatodo')">Farmatodo</button>
 <div class="sidebar-group-title">OSDE</div>
 <button class="tab-btn sidebar-btn" id="btn-osde-nunez" onclick="showTab('osde-nunez')">Osde Núñez</button>
 <button class="tab-btn sidebar-btn" id="btn-osde-nordelta-belgrano" onclick="showTab('osde-nordelta-belgrano')">Osde Nordelta y Belgrano</button>
@@ -315,6 +316,7 @@ max-height: none;
 <button class="tab-btn sidebar-btn" id="btn-marcanueva-sabores" onclick="showTab('marcanueva-sabores')">Marca Nueva Sabores Express</button>
 <button class="tab-btn sidebar-btn" id="btn-sabores-express" onclick="showTab('sabores-express')">Sabores Express</button>
 <button class="tab-btn sidebar-btn" id="btn-hamburguesas-extremas" onclick="showTab('hamburguesas-extremas')">Hamburguesas Extremas</button>
+<button class="tab-btn sidebar-btn" id="btn-arcos-mostaza-locales" onclick="showTab('arcos-mostaza-locales')">Arcos Dorados y Mostaza · Locales</button>
 <div class="sidebar-group-title">Indumentaria y Moda</div>
 <button class="tab-btn sidebar-btn" id="btn-havaiana" onclick="showTab('havaiana')">Havaiana</button>
 <button class="tab-btn sidebar-btn" id="btn-hunterville" onclick="showTab('hunterville')">Hunterville</button>
@@ -323,6 +325,7 @@ max-height: none;
 <div class="sidebar-group-title">Mascotas</div>
 <button class="tab-btn sidebar-btn" id="btn-petshop-naturallife" onclick="showTab('petshop-naturallife')">Pet Shop-Natural Life</button>
 <button class="tab-btn sidebar-btn" id="btn-puppis" onclick="showTab('puppis')">Puppis</button>
+<button class="tab-btn sidebar-btn" id="btn-puppis-caba" onclick="showTab('puppis-caba')">Puppis CABA</button>
 <div class="sidebar-group-title">Automotor</div>
 <button class="tab-btn sidebar-btn" id="btn-chapaypintura" onclick="showTab('chapaypintura')">Taller Chapa y Pintura</button>
 <button class="tab-btn sidebar-btn" id="btn-chery" onclick="showTab('chery')">Concesionaria Chery</button>
@@ -342,9 +345,11 @@ max-height: none;
 <div class="sidebar-group-title">Deportivo</div>
 <button class="tab-btn sidebar-btn" id="btn-smartfit" onclick="showTab('smartfit')">Smartfit - On Fit Gym</button>
 <button class="tab-btn sidebar-btn" id="btn-padelpro" onclick="showTab('padelpro')">Padel PRO</button>
+<button class="tab-btn sidebar-btn" id="btn-smartfit-nuevo" onclick="showTab('smartfit-nuevo')">Smart Fit</button>
 <div class="sidebar-group-title">Oficinas y Terrenos</div>
 <button class="tab-btn sidebar-btn" id="btn-icbc" onclick="showTab('icbc')">Fundación ICBC</button>
 <button class="tab-btn sidebar-btn" id="btn-terrenos" onclick="showTab('terrenos')">Terrenos</button>
+<button class="tab-btn sidebar-btn" id="btn-arcos-mostaza-terrenos" onclick="showTab('arcos-mostaza-terrenos')">Arcos Dorados y Mostaza · Terrenos</button>
 <div class="sidebar-group-title">Residencial</div>
 <button class="tab-btn sidebar-btn" id="btn-sergio" onclick="showTab('sergio')">Sergio</button>
 <button class="tab-btn sidebar-btn" id="btn-fliping" onclick="showTab('fliping')">Fliping</button>
@@ -4060,6 +4065,31 @@ max-height: none;
 </div>
 </div>
 
+</div>
+<div class="tab-panel" id="tab-farmatodo">
+<div class="filters">
+<strong>Cliente:</strong> Farmatodo · <strong>Filtros activos:</strong> Alquiler o Compra · Local comercial <strong>mínimo 280 m² en planta baja</strong> (OBLIGATORIO) · <strong>Esquina</strong> (OBLIGATORIO) · Zona: CABA
+</div>
+</div>
+<div class="tab-panel" id="tab-puppis-caba">
+<div class="filters">
+<strong>Cliente:</strong> Puppis (CABA) · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>180 a 250 m²</strong> (OBLIGATORIO) · Zona: CABA · <strong>A más de 20 cuadras (2 km) de cualquier sucursal Puppis</strong> (OBLIGATORIO) · <em>Distancia chequeada automáticamente contra las 15 sucursales de CABA y 5 de GBA pegadas al límite (puppis.com.ar); la tarjeta indica la más cercana.</em>
+</div>
+</div>
+<div class="tab-panel" id="tab-smartfit-nuevo">
+<div class="filters">
+<strong>Cliente:</strong> Smart Fit · <strong>Filtros activos:</strong> Alquiler · Local comercial, galpón o depósito <strong>600 a 1.000 m²</strong> en planta baja (también puede ser primer piso) · <strong>Alquiler USD 8.000 a 10.000</strong> · Zona: CABA · <strong>No puede estar en un barrio que ya tenga un Smart Fit</strong>: Mataderos (por abrir), Villa Devoto, Flores, Caballito, Villa Crespo, Belgrano, Palermo, Balvanera, San Nicolás, Recoleta · <em>Barrio chequeado automáticamente con el mapa oficial de barrios de la Ciudad.</em>
+</div>
+</div>
+<div class="tab-panel" id="tab-arcos-mostaza-locales">
+<div class="filters">
+<strong>Cliente:</strong> Arcos Dorados y Mostaza · <strong>Filtros activos:</strong> Alquiler · Local comercial <strong>250 a 500 m² en planta baja</strong> (OBLIGATORIO) · <strong>Esquina</strong> (OBLIGATORIO) · Zona: CABA
+</div>
+</div>
+<div class="tab-panel" id="tab-arcos-mostaza-terrenos">
+<div class="filters">
+<strong>Cliente:</strong> Arcos Dorados y Mostaza · <strong>Filtros activos:</strong> Compra o alquiler · Terreno <strong>1.400 a 3.000 m²</strong> · Zona: CABA
+</div>
 </div>
 <div class="tab-panel" id="tab-bumpie">
 <div class="filters" style="background:#fff3cd;border-color:#ffe08a;">
